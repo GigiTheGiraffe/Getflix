@@ -5,7 +5,7 @@ $client = new \GuzzleHttp\Client();
 
 $response = $client->request('GET', 'https://api.themoviedb.org/3/genre/movie/list?language=fr', [
   'headers' => [
-    'Authorization' => "Bearer $token",
+    'Authorization' => 'Bearer ' . $_ENV['MOVIEDB_TOKEN'],
     'accept' => 'application/json',
   ],
 ]);
