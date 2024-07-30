@@ -12,30 +12,41 @@ $response = $client->request('GET', 'https://api.themoviedb.org/3/genre/movie/li
 ]);
 $contents = $response->getBody()->getContents();
 //print_r(json_decode($contents));
-$array = (array) $contents[0];
-print_r($array);
-/*
-//echo $response;
+echo '<br>';
+$contents = json_decode($contents, true);
+//print_r($contents['genres']);
 //print_r($contents);
-echo '<br>';
-$array = (array) $contents;
-print_r($response);
-echo '<br>';
-*/
+$i = 0;
+$arrayGenres = [];
+foreach ($contents['genres'] as $genre) {
+  // Accéder directement aux valeurs 'id' et 'name'
+  $id = $genre['id'];
+  $name = $genre['name'];
+  $arrayGenres[] = ['id'=> $id,'name'=> $name];
+}
+//print_r($arrayGenres);
+//echo ($arrayGenres[0]['name']);
 try {
-// Ouverture connexion
-$conn = new PDO('mysql:host=' . $_ENV['DB_SERVERNAME'] . ';dbname=' . $_ENV['DB_NAME'], $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD']);
-// Mettre le mode erreur
-$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-// Utiliser la co
-$stmt = $conn->prepare('SELECT * FROM genres');
-$stmt->execute();
-$genres = $stmt->fetchAll(PDO::FETCH_ASSOC);
-print_r($genres);
+  // Ouverture connexion
+  $conn = new PDO('mysql:host=' . $_ENV['DB_SERVERNAME_LOCAL'] . ';dbname=' . $_ENV['DB_NAME_LOCAL'], $_ENV['DB_USERNAME_LOCAL'], $_ENV['DB_PASSWORD_LOCAL']);
+  // Mettre le mode erreur
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  // Repeter autant de fois qu'il y a de genre
+  foreach ($arrayGenres as $genre) {
+      // Préparer la requête avec des paramètres
+      $stmt = $conn->prepare("INSERT INTO genres (id, genre_name) VALUES (:id, :genre_name)");
+      // Lier les valeurs aux paramètres
+      $stmt->bindParam(':id', $genre['id'], PDO::PARAM_INT);
+      $stmt->bindParam(':genre_name', $genre['name'], PDO::PARAM_STR);
+      // Exécuter la requête
+      $stmt->execute();
+  }
 } catch (PDOException $e) {
   echo "Connection failed: " . $e->getMessage();
   exit;
+} finally {
+  // Fermer la connexion
+  $conn = null;
 }
-// et maintenant, fermez-la !
-$conn = null;
 ?>
