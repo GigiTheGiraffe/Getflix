@@ -1,65 +1,66 @@
-/* styles.css */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #141414;
-    color: #fff;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* font-family: "Inter"; */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
+/* font-family: "Newsreader"
+font-weight: 500; */
+
+/* violet
+color: 9003FF */
+
+* {
+    background-color: rgb(6, 6, 6);
 }
 
-header {
-    background-color: #141414;
+.titres {
+    font-family: "Newsreader", light;
+    font-style: light;
+    font-weight: 300;
+    font-size: 4rem;
+    color: white; 
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+.genres {
+    font-family: "Newsreader";
+    font-weight: 300;
+    font-size: 1.8rem;
+    color: white; 
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
+.titres2 {
+    font-family: "Newsreader";
+    font-weight: 300;
+    font-size: 2.4rem;
+    color: white; 
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+.signin {
+    font-family: "Newsreader";
+    font-weight: 200;
+    font-size: 2rem;
+    color: white; 
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 16px;
+.texte {
+    font-family: "Newsreader";
+    font-weight: 200;
+    font-size: 1.3rem;
+    color: white; 
 }
 
-main {
-    padding: 20px;
+.titreside {
+    font-family: "Inter";
+    font-weight: 300;
+    font-size: 1.1rem;
+    color: white; 
 }
 
-.carousel {
-    margin: 20px 0;
-}
-
-.carousel h2 {
-    margin-bottom: 10px;
-}
-
-.carousel-inner {
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-}
-
-.carousel-item {
-    flex: 0 0 auto;
-    width: 200px;
-    height: 300px;
-}
-
-.carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.overview {
+    font-family: "Inter";
+    font-weight: 300;
+    font-size: 1rem;
+    color: white; 
 }
