@@ -4,16 +4,17 @@ include 'loadEnv.php';
 
 $client = new \GuzzleHttp\Client();
 
-$response = $client->request('GET', 'https://api.themoviedb.org/3/genre/movie/list?language=fr', [
+$response = $client->request('GET', 'https://api.themoviedb.org/3/genre/movie/list?language=en', [
   'headers' => [
     'Authorization' => 'Bearer ' . $_ENV['MOVIEDB_TOKEN'],
     'accept' => 'application/json',
   ],
 ]);
+
 $contents = $response->getBody()->getContents();
-//print_r(json_decode($contents));
 $contents = json_decode($contents, true);
 
+// Mnt qu'on a les genres dans une array, on va les enregistrer sur la db
 try {
   // Ouverture connexion
   $conn = new PDO('mysql:host=' . $_ENV['DB_SERVERNAME_LOCAL'] . ';dbname=' . $_ENV['DB_NAME_LOCAL'], $_ENV['DB_USERNAME_LOCAL'], $_ENV['DB_PASSWORD_LOCAL']);
@@ -30,11 +31,12 @@ try {
       // Exécuter la requête
       $stmt->execute();
   }
+  // Si une erreur apparait, le catch l'affichera
 } catch (PDOException $e) {
   echo "Connection failed: " . $e->getMessage();
   exit;
 } finally {
-  // Fermer la connexion
+  // Fermer la connexion dans tout les cas
   $conn = null;
 }
 ?>
