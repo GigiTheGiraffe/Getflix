@@ -12,20 +12,8 @@ $response = $client->request('GET', 'https://api.themoviedb.org/3/genre/movie/li
 ]);
 $contents = $response->getBody()->getContents();
 //print_r(json_decode($contents));
-echo '<br>';
 $contents = json_decode($contents, true);
-//print_r($contents['genres']);
-//print_r($contents);
-$i = 0;
-$arrayGenres = [];
-foreach ($contents['genres'] as $genre) {
-  // Accéder directement aux valeurs 'id' et 'name'
-  $id = $genre['id'];
-  $name = $genre['name'];
-  $arrayGenres[] = ['id'=> $id,'name'=> $name];
-}
-//print_r($arrayGenres);
-//echo ($arrayGenres[0]['name']);
+
 try {
   // Ouverture connexion
   $conn = new PDO('mysql:host=' . $_ENV['DB_SERVERNAME_LOCAL'] . ';dbname=' . $_ENV['DB_NAME_LOCAL'], $_ENV['DB_USERNAME_LOCAL'], $_ENV['DB_PASSWORD_LOCAL']);
@@ -33,7 +21,7 @@ try {
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   // Repeter autant de fois qu'il y a de genre
-  foreach ($arrayGenres as $genre) {
+  foreach ($contents['genres'] as $genre) {
       // Préparer la requête avec des paramètres
       $stmt = $conn->prepare("INSERT INTO genres (id, genre_name) VALUES (:id, :genre_name)");
       // Lier les valeurs aux paramètres
