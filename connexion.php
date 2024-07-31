@@ -88,7 +88,9 @@
 
                 if ($result) {
                     echo "<p>Connexion réussie.</p>";
-                } else {                    
+                    header("Location:index.html");
+                    exit();
+                } else {
                     echo 'Les identifiants sont invalides.';
                 }
             } catch (PDOException $e) {
