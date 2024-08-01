@@ -18,6 +18,15 @@ function getData(int $movieId)
     // Transformer la réponse en array
     $response = json_decode($response->getBody()->getContents(), true);
     // Retourne l'array prete a etre utilise
-    return $response;
+    return $response['cast'];
 }
-echo $response->getBody();
+
+function getProducer($response) {
+
+}
+
+function getActors($response) {
+
+}
+echo '<pre>';
+print_r(getData(482321));

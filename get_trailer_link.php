@@ -38,4 +38,3 @@ function getTrailerLink($movieId) {
     $response = getData($movieId);
     return getTrailer($response);
 }
-echo getTrailerLink(482321);
