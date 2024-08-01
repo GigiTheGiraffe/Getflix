@@ -2,7 +2,7 @@
     if (isset($_POST["subscribe"])) {
         $user = $_POST["user"];
         $email = $_POST["email"];
-        $password = $_POST["password"];
+        $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
         try {
             $servername = 'localhost';
             $username = 'root';
