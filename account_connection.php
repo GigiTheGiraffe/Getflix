@@ -2,7 +2,7 @@
 if (isset($_POST["check"])) {
     $user = $_POST["user"];
     $email = $_POST["email"];
-    $password = $_POST["password"];
+    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
     try {
         $db_servername = 'localhost';
         $db_username = 'root';
@@ -18,9 +18,11 @@ if (isset($_POST["check"])) {
         $sth->execute();
         $result = $sth->fetch(PDO::FETCH_ASSOC);
 
-        if ($result) {
-            echo "<p>Connexion réussie.</p>";
-            header("Location:index.html");
+        if ($result && password_verify($password, $result['password'])) {
+            session_start();
+            $_SESSION['user_id'] = $result['id'];
+            $_SESSION['user_name'] = $result['user'];
+            header("Location: index.php");
             exit();
         } else {
             echo 'Les identifiants sont invalides.';

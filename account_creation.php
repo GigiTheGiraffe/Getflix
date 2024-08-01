@@ -1,5 +1,5 @@
  <?php
-    if (isset($_POST["check"])) {
+    if (isset($_POST["subscribe"])) {
         $user = $_POST["user"];
         $email = $_POST["email"];
         $password = $_POST["password"];
@@ -29,7 +29,7 @@
                 echo 'Compte créé avec succès.';
             }
         } catch (PDOException $e) {
+            echo 'Impossible de traiter les données. Erreur : ' . $e->getMessage();
         }
-        echo 'Impossible de traiter les données. Erreur : ' . $e->getMessage();
     }
     ?>
