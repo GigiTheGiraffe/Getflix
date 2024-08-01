@@ -1,6 +1,7 @@
 <?php
 include 'switch_genre.php';
 include 'get_trailer_link.php';
+include 'get_cast_crew.php';
 function insertIntoDb($responses) {
   $imageBaseUrl = 'https://image.tmdb.org/t/p/original';
   try {
@@ -11,10 +12,12 @@ function insertIntoDb($responses) {
 
     // Repeter autant de fois qu'il y a de films
     foreach ($responses as $film) {
-      $trailerLink = getTrailerLink($film['id']);
-      $stmt = $conn->prepare("INSERT INTO movieslist (movie_DB_Id, vote_average, poster_path, backdrop_path, original_language, title, overview, release_date, genre_1, genre_2, genre_3, trailer_link) VALUES (:movie_DB_Id, :vote_average, :poster_path, :backdrop_path, :original_language, :title, :overview, :release_date, :genre_1, :genre_2, :genre_3, :trailer_link)");
+      $movie_id = $film['id'];
+      $trailerLink = getTrailerLink($movie_id);
+      $arrayProducersActors = getCastCrew($movie_id);
+      $stmt = $conn->prepare("INSERT INTO movieslist (movie_DB_Id, vote_average, poster_path, backdrop_path, original_language, title, overview, release_date, genre_1, genre_2, genre_3, trailer_link, producers, actors) VALUES (:movie_DB_Id, :vote_average, :poster_path, :backdrop_path, :original_language, :title, :overview, :release_date, :genre_1, :genre_2, :genre_3, :trailer_link, :producers, :actors)");
       // Lier les valeurs aux paramètres
-      $stmt->bindParam(':movie_DB_Id', $film['id']);
+      $stmt->bindParam(':movie_DB_Id', $movie_id);
       $stmt->bindParam(':vote_average', $film['vote_average']);
       $poster = $imageBaseUrl . $film['poster_path'];
       $backdrop = $imageBaseUrl . $film['backdrop_path'];

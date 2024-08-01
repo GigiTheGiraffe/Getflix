@@ -18,15 +18,49 @@ function getData(int $movieId)
     // Transformer la réponse en array
     $response = json_decode($response->getBody()->getContents(), true);
     // Retourne l'array prete a etre utilise
-    return $response['cast'];
+    return $response;
 }
 
 function getProducer($response) {
-
+    // Initialise une array
+    $arrayProducers = [];
+    // Pour chaque producteur, on le stock dans une array
+    // Itere dans l'array
+    foreach($response['crew'] as $member) {
+        // Est ce que c'est un producteur?
+        if ($member['job'] == 'Director') {
+            $arrayProducers[] = $member['name'];
+        }
+    }
+    return $arrayProducers;
 }
 
 function getActors($response) {
-
+    // Initialise une array
+    $arrayActors = [];
+    // Pour chaque acteur, on le stock dans une array
+    // Itere dans l'array
+    foreach($response['cast'] as $member) {
+        // Est ce que c'est un acteur?
+        if ($member['known_for_department'] == 'Acting') {
+            $arrayActors[] = $member['name'];
+        }
+    }
+    return $arrayActors;
 }
-echo '<pre>';
-print_r(getData(482321));
+
+function getCastCrew($movieId) {
+    $response = getData($movieId);
+    $producers = getProducer($response);
+    $actors = getActors($response);
+
+    return [
+        'producers' => $producers,
+        'actors' => $actors
+    ];
+}
+
+$array = getCastCrew(68);
+print_r($array);
+echo implode(', ', $array['producers']);
+echo implode(', ', $array['actors']);
