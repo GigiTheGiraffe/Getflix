@@ -6,13 +6,14 @@
         try {
             $servername = 'localhost';
             $username = 'root';
-            $password = '';
+            $dbpassword = '';
             $dbname = 'users';
             //On établit la connexion
             $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $sth = $conn->prepare("SELECT * FROM authentification WHERE user = :user OR email = :email");
             $sth->bindParam(':user', $user);
+            
             $sth->bindParam(':email', $email);
             $sth->execute();
             $result = $sth->fetch(PDO::FETCH_ASSOC);
