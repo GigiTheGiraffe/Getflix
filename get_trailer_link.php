@@ -1,10 +1,8 @@
 <?php
 // Minimum pour utiliser le call a l'api
 require_once('vendor/autoload.php');
-include 'load_env.php';
-loadEnv(__DIR__ . '/.env');
 
-// Prends l'array obtenue par la fonction getData pour chercher le trailer
+// Prends l'array obtenue par la fonction Trailer pour chercher le trailer
 function getTrailer($response) {
     // Cree le debut de l'url
     $urlYoutube = 'https://www.youtube.com/watch?v=';
@@ -18,7 +16,7 @@ function getTrailer($response) {
 }
 
 //  Sert à obtenir l'array de l'api dans laquelle chercher le trailer
-function getData(int $movieId)
+function getTrailerData(int $movieId)
 {
 
     $client = new \GuzzleHttp\Client();
@@ -35,6 +33,6 @@ function getData(int $movieId)
     return $response;
 }
 function getTrailerLink($movieId) {
-    $response = getData($movieId);
+    $response = getTrailerData($movieId);
     return getTrailer($response);
 }

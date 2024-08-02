@@ -1,6 +1,5 @@
 <?php
 require_once('vendor/autoload.php');
-include 'load_env.php';
 function importPages($number)
 {
   $client = new \GuzzleHttp\Client();

@@ -1,10 +1,8 @@
 <?php
 // Minimum pour utiliser le call a l'api
 require_once('vendor/autoload.php');
-include 'load_env.php';
-loadEnv(__DIR__ . '/.env');
 
-function getData(int $movieId)
+function getCastCrewData(int $movieId)
 {
 
     $client = new \GuzzleHttp\Client();
@@ -29,6 +27,7 @@ function getProducer($response) {
     foreach($response['crew'] as $member) {
         // Est ce que c'est un producteur?
         if ($member['job'] == 'Director') {
+            // Ajoute son nom à une array pour tous les contenir
             $arrayProducers[] = $member['name'];
         }
     }
@@ -43,6 +42,7 @@ function getActors($response) {
     foreach($response['cast'] as $member) {
         // Est ce que c'est un acteur?
         if ($member['known_for_department'] == 'Acting') {
+            // Ajoute son nom à une array pour tous les contenir
             $arrayActors[] = $member['name'];
         }
     }
@@ -50,17 +50,30 @@ function getActors($response) {
 }
 
 function getCastCrew($movieId) {
-    $response = getData($movieId);
+    // Recuperation des cast and crew
+    $response = getCastCrewData($movieId);
+    // Extraction des producteurs
     $producers = getProducer($response);
+    // Extraction des acteurs
     $actors = getActors($response);
-
-    return [
+    // On les mets dans une array
+    $arrayProducersActors = [
         'producers' => $producers,
         'actors' => $actors
     ];
+    $arrayProducers = &$arrayProducersActors['producers'];
+    $arrayActors = &$arrayProducersActors['actors'];
+    // Limitation des producteurs à 2 max
+    if (count($arrayProducers) > 2) {
+        $arrayProducers = array_slice($arrayProducers, 0, 2);
+    }
+    // Limitation des acteurs à 5 max
+    if (count($arrayActors) > 5) {
+        $arrayActors = array_slice($arrayActors, 0, 5);
+    }
+    // Transformation en string
+    $arrayProducers = implode(', ', $arrayProducers);
+    $arrayActors = implode(', ', $arrayActors);
+    // On retourne l'array
+    return $arrayProducersActors;
 }
-
-$array = getCastCrew(68);
-print_r($array);
-echo implode(', ', $array['producers']);
-echo implode(', ', $array['actors']);

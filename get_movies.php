@@ -1,4 +1,5 @@
 <?php
+include_once 'load_env.php';
 include 'import_page.php';
 include 'insert_db.php';
 

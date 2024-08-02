@@ -28,6 +28,8 @@ function insertIntoDb($responses) {
       $stmt->bindParam(':overview', $film['overview']);
       $stmt->bindParam(':release_date', $film['release_date']);
       $stmt->bindParam(':trailer_link', $trailerLink);
+      $stmt->bindParam(':actors', $arrayProducersActors['actors']);
+      $stmt->bindParam(':producers', $arrayProducersActors['producers']);
       // Prendre les int
       $genre1 = $film['genre_ids'][0] ?? null;
       $genre2 = $film['genre_ids'][1] ?? null;
