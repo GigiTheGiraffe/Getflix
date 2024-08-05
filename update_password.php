@@ -1,5 +1,5 @@
 <?php
-if (ISSET($_POST["update"])) {
+if (isset($_POST["update"])) {
     $token = $_POST["token"];
     $new_password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
@@ -19,6 +19,7 @@ if (ISSET($_POST["update"])) {
         $result = $sth->fetch(PDO::FETCH_ASSOC);
 
         if ($result) {
+            echo "Votre token existe";
             // Mettre à jour le mot de passe dans la table des utilisateurs
             $email = $result['email'];
             $sth = $conn->prepare("UPDATE authentification SET password = :password WHERE email = :email");
