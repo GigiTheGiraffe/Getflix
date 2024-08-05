@@ -14,6 +14,16 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 echo "Bienvenue, " . $_SESSION['user_name'];
 ?>
 
+<?php
+if (isset($_POST['logout'])) {
+session_start();
+session_unset();
+session_destroy();
+header('Location: connexion-test.php');
+exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -34,6 +44,11 @@ echo "Bienvenue, " . $_SESSION['user_name'];
                 <li><a href="#">Films</a></li>
                 <li><a href="#">Nouveautés</a></li>
                 <li><a href="#">Ma liste</a></li>
+                <li>
+                    <form method="POST" id="logout" name="logout">
+                        <button name="logout">Se déconnecter</button>
+                    </form>
+                </li>
             </ul>
         </nav>
     </header>

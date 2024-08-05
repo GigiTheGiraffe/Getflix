@@ -1,6 +1,8 @@
 <?php
 include("account_connection.php");
 include("account_creation.php");
+session_start();
+echo "Bienvenue, " . $_SESSION['user_name'];
 ?>
 <!DOCTYPE html>
 <html lang="english">
