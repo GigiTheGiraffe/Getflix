@@ -31,6 +31,8 @@ if (isset($_POST["check"])) {
                 $_SESSION['user_name'] = $result['user'];
                 echo 'Connexion réussie. Redirection...<br>';
                 header("Location: index.php");
+                echo "Bienvenue, " + $_SESSION['user_name'];
+
                 exit();
             } else {
                 echo 'Mot de passe incorrect.<br>';
