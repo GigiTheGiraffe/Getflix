@@ -1,27 +1,6 @@
 <?php
-session_start();
-
-if (!isset($_SESSION['user_id'])) {
-    header('Location: connexion-test.php');
-    exit;
-}
-
-include("database_connection.php");
-
-$stmt = $conn->prepare('SELECT * FROM authentification WHERE id = ?');
-$stmt->execute([$_SESSION['user_id']]);
-$user = $stmt->fetch(PDO::FETCH_ASSOC);
-echo "Bienvenue, " . $_SESSION['user_name'];
-?>
-
-<?php
-if (isset($_POST['logout'])) {
-session_start();
-session_unset();
-session_destroy();
-header('Location: connexion-test.php');
-exit;
-}
+include("logout.php");
+include("user_session_check.php");
 ?>
 
 <!DOCTYPE html>

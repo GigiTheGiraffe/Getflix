@@ -29,7 +29,7 @@ if (isset($_POST["check"])) {
                 session_start();
                 $_SESSION['user_id'] = $result['id'];
                 $_SESSION['user_name'] = $result['user'];
-                header("Location:../index.php");
+                header("Location: index.php");
                 exit();
             } else {
                 echo 'Mot de passe incorrect.<br>';
