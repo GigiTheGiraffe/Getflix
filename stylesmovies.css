@@ -134,3 +134,76 @@ color: 9003FF */
     padding: 5px 0;
     margin: 0%;
 }
+.ais-InstantSearch {
+    display: flex;
+    align-self: center;
+}
+
+.ais-SearchBox-input {
+    background-color: white;
+    color: #222;
+}
+
+.hit {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    background-color: aliceblue;
+}
+.hit img {
+    max-width: 50px;
+    margin-right: 10px;
+}
+.hit .hit-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+}
+
+.no-results {
+    font-size: 1.2em;
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#hits {
+    position: absolute; /* Positionnement absolu */
+    top: 90px; /* À ajuster selon la hauteur de la barre de recherche */
+    left: 12.5%;
+    width: 75%; /* Prendre toute la largeur */
+    height: 50vh; /* Prendre 50% de la hauteur de la page */
+    background-color: gainsboro; /* Fond noir pour le conteneur des résultats */
+    padding: 10px; /* Espacement interne */
+    overflow-y: auto; /* Défilement vertical */
+    display: none; /* Masquer le conteneur par défaut */
+}
+#hits > *, .ais-InfiniteHits-list {
+    background-color: purple;
+}
+.hit:hover, .hit:hover > *, .hit > a:hover  {
+    background-color:#888;
+}
+
+.ais-InfiniteHits-loadMore {
+    display: flex; /* Affiche le bouton comme un bloc en ligne */
+    padding: 10px 20px; /* Espacement interne */
+    align-self: center;
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur en forme de main */
+    font-size: 1em; /* Taille de la police */
+    text-align: center; /* Centrer le texte */
+}
+
+.hit > a {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.hit > img {
+    width: 25%;
+}
+.hit-name {
+    width: 75%;
+}
