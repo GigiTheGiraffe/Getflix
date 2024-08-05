@@ -1,3 +1,7 @@
+<?php
+include 'show_movies.php';
+$randomnFilmArray = getRandomnFilm();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,142 +35,17 @@
         <hr class="purple-divider">
         <section id="movie2">
             <ul id="propal">
-                <li class="movie-item">
-                    <a href="#">
-                        <div class="poster"></div>
-                    </a>
-                    <div class="text-container">
-                        <h5 class="texte">Nom du film</h5>
-                        <h5 class="texte">Tag</h5>
-                    </div>
-                </li>
-                <li class="movie-item">
-                    <a href="#">
-                        <div class="poster"></div>
-                    </a>
-                    <div class="text-container">
-                        <h5 class="texte">Nom du film</h5>
-                        <h5 class="texte">Tag</h5>
-                    </div>
-                </li>
-                <li class="movie-item">
-                    <a href="#">
-                        <div class="poster"></div>
-                    </a>
-                    <div class="text-container">
-                        <h5 class="texte">Nom du film</h5>
-                        <h5 class="texte">Tag</h5>
-                    </div>
-                </li>
-                <li class="movie-item">
-                    <a href="#">
-                        <div class="poster"></div>
-                    </a>
-                    <div class="text-container">
-                        <h5 class="texte">Nom du film</h5>
-                        <h5 class="texte">Tag</h5>
-                    </div>
-                </li>
-                <li class="movie-item">
-                    <a href="#">
-                        <div class="poster"></div>
-                    </a>
-                    <div class="text-container">
-                        <h5 class="texte">Nom du film</h5>
-                        <h5 class="texte">Tag</h5>
-                    </div>
-                </li>
-                <li class="movie-item">
-                    <a href="#">
-                        <div class="poster"></div>
-                    </a>
-                    <div class="text-container">
-                        <h5 class="texte">Nom du film</h5>
-                        <h5 class="texte">Tag</h5>
-                    </div>
-                </li>
-                <li class="movie-item">
-                    <a href="#">
-                        <div class="poster"></div>
-                    </a>
-                    <div class="text-container">
-                        <h5 class="texte">Nom du film</h5>
-                        <h5 class="texte">Tag</h5>
-                    </div>
-                </li>
-                <li class="movie-item">
-                    <a href="#">
-                        <div class="poster"></div>
-                    </a>
-                    <div class="text-container">
-                        <h5 class="texte">Nom du film</h5>
-                        <h5 class="texte">Tag</h5>
-                    </div>
-                </li>
-                <li class="movie-item">
-                    <a href="#">
-                        <div class="poster"></div>
-                    </a>
-                    <div class="text-container">
-                        <h5 class="texte">Nom du film</h5>
-                        <h5 class="texte">Tag</h5>
-                    </div>
-                </li>
-                <li class="movie-item">
-                    <a href="#">
-                        <div class="poster"></div>
-                    </a>
-                    <div class="text-container">
-                        <h5 class="texte">Nom du film</h5>
-                        <h5 class="texte">Tag</h5>
-                    </div>
-                </li>
-                <li class="movie-item">
-                    <a href="#">
-                        <div class="poster"></div>
-                    </a>
-                    <div class="text-container">
-                        <h5 class="texte">Nom du film</h5>
-                        <h5 class="texte">Tag</h5>
-                    </div>
-                </li>
-                <li class="movie-item">
-                    <a href="#">
-                        <div class="poster"></div>
-                    </a>
-                    <div class="text-container">
-                        <h5 class="texte">Nom du film</h5>
-                        <h5 class="texte">Tag</h5>
-                    </div>
-                </li>
-                <li class="movie-item">
-                    <a href="#">
-                        <div class="poster"></div>
-                    </a>
-                    <div class="text-container">
-                        <h5 class="texte">Nom du film</h5>
-                        <h5 class="texte">Tag</h5>
-                    </div>
-                </li>
-                <li class="movie-item">
-                    <a href="#">
-                        <div class="poster"></div>
-                    </a>
-                    <div class="text-container">
-                        <h5 class="texte">Nom du film</h5>
-                        <h5 class="texte">Tag</h5>
-                    </div>
-                </li>
-                <li class="movie-item">
-                    <a href="#">
-                        <div class="poster"></div>
-                    </a>
-                    <div class="text-container">
-                        <h5 class="texte">Nom du film</h5>
-                        <h5 class="texte">Tag</h5>
-                    </div>
-                </li>
-                <!-- end so on  -->
+                <?php foreach ($randomnFilmArray as $film) : ?>
+                    <li class="movie-item">
+                        <a href="#">
+                            <img class="poster" loading="lazy" src="<?= $film['poster_path'] ?>" width="500" height="500" alt="<?= "poster of " . $film['title'] ?>">
+                        </a>
+                        <div class="text-container">
+                            <h5 class="texte"><?=$film['title'] ?></h5>
+                            <h5 class="texte"><?=$film['genre_1'] ?></h5>
+                        </div>
+                    </li>
+                <?php endforeach; ?>
             </ul>
         </section>
     </main>
