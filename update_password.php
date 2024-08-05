@@ -1,5 +1,5 @@
 <?php
-if ($ISSET($_POST["update"])) {
+if (ISSET($_POST["update"])) {
     $token = $_POST["token"];
     $new_password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
