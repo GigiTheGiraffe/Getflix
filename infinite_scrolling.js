@@ -96,6 +96,9 @@ function changeGenre() {
     displayedMovieTitle.clear();
     moviesContainer.innerHTML = '';
     loadMovies();
+    window.removeEventListener('scroll', handleInfiniteScroll);
+    // Reactiver l'ecouteur d'evenements de défilement psq j'ai l'impression qu'il ne se met pas tout le monde
+    window.addEventListener('scroll', handleInfiniteScroll);
 }
 // Rajoute ecouteur pour quand on change la valeur du bouton select
 document.getElementById('genre').addEventListener('change', changeGenre);
