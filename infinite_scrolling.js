@@ -32,6 +32,13 @@ async function loadMovies() {
         });
         // Récupère les films depuis la réponse JSON
         const moviesData = await response.json();
+         // Si aucun film n'est renvoyé, arrêtez le chargement et les demandes api inutile
+         if (moviesData.length === 0) {
+            // Désactiver l'écouteur d'événements de défilement
+            window.removeEventListener('scroll', loadMoreMovies);
+            return;
+        }
+
         // Met à jour l'offset pour la prochaine requête
         offset += limit;
         // On va iterer dans chaque film renvoyé
@@ -71,8 +78,10 @@ async function loadMovies() {
 loadMovies();
 
 // Charger plus de films lorsque l'utilisateur fait défiler la page
-window.addEventListener('scroll', () => {
+function loadMoreMovies() {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100 && !loading) {
         loadMovies();
     }
-});
+}
+
+window.addEventListener('scroll', loadMoreMovies);
