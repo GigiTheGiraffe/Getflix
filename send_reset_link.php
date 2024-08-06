@@ -27,10 +27,18 @@ if (isset($_POST["reset"])) {
             $sth->bindParam(':email', $email, PDO::PARAM_STR);
             $sth->bindParam(':token', $token, PDO::PARAM_STR);
             $sth->bindParam(':expiry', $expiry, PDO::PARAM_STR);
-            $sth->execute();
+
+            if ($sth->execute()) {
+                echo "Token inséré avec succès.";
+            } else {
+                echo "Échec de l'insertion du token.";
+            }
+
 
             // Envoyer l'email
-            $resetLink = "localhost/getflix/forgotten_password.php?token=" . $token;
+            $resetLink = "localhost/getflix/reset_password.php?token=" . $token;
+            echo "Lien de réinitialisation : " . $resetLink; // Affichez le lien pour vérifier qu'il est correct
+
             $subject = "Réinitialisation du mot de passe";
             $message = "Cliquez sur ce lien pour réinitialiser votre mot de passe : " . $resetLink;
             $headers = "From: martin.gausseran@gmail.com";
@@ -47,4 +55,3 @@ if (isset($_POST["reset"])) {
         echo 'Erreur : ' . $e->getMessage();
     }
 }
-?>
