@@ -106,8 +106,10 @@ color: 9003FF */
     font-style: light;
     font-weight: 300;
     font-size: 4rem;
-    color: white; 
-    margin: 0%;
+    color: white;
+    padding-left: 3vh;
+    margin-top: 3vh;
+    margin-bottom: 0;
 }
 
 .titres2 {
@@ -146,9 +148,10 @@ color: 9003FF */
 .purple-divider {
     position: relative;
     border: 0;
-    height: 2px; 
-    background-color: blueviolet; 
+    height: 2px;
+    background-color: blueviolet;
     margin-left: 3vh;
     margin-right: 3vh;
     border-radius: 5px;
+    margin-top: 2vh;
 }
