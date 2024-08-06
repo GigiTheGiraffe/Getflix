@@ -6,11 +6,12 @@ const limit = 20;
 let loading = false;
 // Genre du film 
 //  CHANGER CURRENTGENRE QUAND ON SAIT COMMENT L OBTENIR
+// let currentGenre = document.getElementById('genre').value; REMPLACER LA LIGNE EN DESSOUS PAR CELLE CI QUAND BOUTON
 let currentGenre = null;
 // Endroit ou append les films
 const moviesContainer = document.getElementById('propal');
 // Ensemble pour garder trace des ID de films affichés
-let displayedMovieIds = new Set();
+let displayedMovieTitle = new Set();
 async function loadMovies() {
     if (loading) return;
     loading = true;
@@ -35,7 +36,7 @@ async function loadMovies() {
          // Si aucun film n'est renvoyé, arrêtez le chargement et les demandes api inutile
          if (moviesData.length === 0) {
             // Désactiver l'écouteur d'événements de défilement
-            window.removeEventListener('scroll', loadMoreMovies);
+            window.removeEventListener('scroll', handleInfiniteScroll);
             return;
         }
 
@@ -43,9 +44,9 @@ async function loadMovies() {
         offset += limit;
         // On va iterer dans chaque film renvoyé
         moviesData.forEach(film => {
-            // Vérifie si l'ID du film a déjà été affiché
-            if (!displayedMovieIds.has(film.title)) {
-                displayedMovieIds.add(film.title); // Ajoute l'ID à l'ensemble
+            // Vérifie si le nom du film a déjà été affiché
+            if (!displayedMovieTitle.has(film.title)) {
+                displayedMovieTitle.add(film.title); // Ajoute le nom du film à l'ensemble
                 const movieItem = document.createElement('li');
                 movieItem.className = 'movie-item';
                 // Ajoute juste le genre de la recherche à afficher
@@ -71,17 +72,41 @@ async function loadMovies() {
         console.error('Error loading movies:', error);
     } finally {
         loading = false;
+        checkAndLoadMoreMovies();
     }
 }
 
-// Charger les premiers films
-loadMovies();
 
-// Charger plus de films lorsque l'utilisateur fait défiler la page
-function loadMoreMovies() {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100 && !loading) {
+// Charger plus de films lorsque l'utilisateur fait défiler la page // changer pour que ce soit plus fonctionnel genre si l'utilisateur voit le dernier film ou autre
+function handleInfiniteScroll() {
+    const endOfPage = window.innerHeight + window.scrollY >= document.body.offsetHeight - 100;
+    if (endOfPage && !loading) {
         loadMovies();
     }
 }
-
-window.addEventListener('scroll', loadMoreMovies);
+// Si l'ecran est trop grand et donc qu'il y a plus de place que pour 20 films, il faut encore en charger 20 pour que le user puisse scroll
+function checkAndLoadMoreMovies() {
+    const endOfPageFirst = window.innerHeight >= document.body.offsetHeight;
+    console.log( window.innerHeight)
+    console.log(document.body.offsetHeight)
+    if (endOfPageFirst && !loading) {
+        loadMovies();
+    }
+}
+// Si le genre change, on remet le offset a 0, on met la liste des films deja affichés a 0, on met la liste de film a 0 puis on charge 20 films
+function changeGenre() {
+    currentGenre = document.getElementById('genre').value;
+    offset = 0;
+    displayedMovieTitle.clear();
+    moviesContainer.innerHTML = '';
+    loadMovies();
+}
+// ICI IMPORTANT
+// document.getElementById('genre').addEventListener('change', changeGenre); Rajouter la fonction change genre pour changer le genre quand la valeur du bouton change
+// ICI IMPORTANT
+// Charger les premiers films
+loadMovies();
+// Quand on scroll, on verifie si infinite scroll est necessaire
+window.addEventListener('scroll', handleInfiniteScroll);
+// Verifier et charger plus de films si necessaire apres le chargement initial
+window.addEventListener('load', checkAndLoadMoreMovies);

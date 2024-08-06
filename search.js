@@ -44,3 +44,4 @@ search.on('render', () => {
 
 search.start();
 
+// CHanger ça pour que ce soit infini et que le bouton show more n'existe plus  
