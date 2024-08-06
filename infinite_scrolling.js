@@ -5,9 +5,8 @@ const limit = 20;
 // Booleen pour savoir si loading est deja entrain de travailler
 let loading = false;
 // Genre du film 
-//  CHANGER CURRENTGENRE QUAND ON SAIT COMMENT L OBTENIR
-// let currentGenre = document.getElementById('genre').value; REMPLACER LA LIGNE EN DESSOUS PAR CELLE CI QUAND BOUTON
 let currentGenre = null;
+console.log(currentGenre)
 // Endroit ou append les films
 const moviesContainer = document.getElementById('propal');
 // Ensemble pour garder trace des ID de films affichés
@@ -20,7 +19,6 @@ async function loadMovies() {
     // Ajout des donnees offset
     params.append('offset', offset);
     // Ajout du genre si il existe dans la requete 
-    //  CHANGER CURRENTGENRE QUAND ON SAIT COMMENT L OBTENIR
     if (currentGenre) {
         params.append('genre', currentGenre);
     }
@@ -87,8 +85,6 @@ function handleInfiniteScroll() {
 // Si l'ecran est trop grand et donc qu'il y a plus de place que pour 20 films, il faut encore en charger 20 pour que le user puisse scroll
 function checkAndLoadMoreMovies() {
     const endOfPageFirst = window.innerHeight >= document.body.offsetHeight;
-    console.log( window.innerHeight)
-    console.log(document.body.offsetHeight)
     if (endOfPageFirst && !loading) {
         loadMovies();
     }
@@ -101,9 +97,9 @@ function changeGenre() {
     moviesContainer.innerHTML = '';
     loadMovies();
 }
-// ICI IMPORTANT
-// document.getElementById('genre').addEventListener('change', changeGenre); Rajouter la fonction change genre pour changer le genre quand la valeur du bouton change
-// ICI IMPORTANT
+// Rajoute ecouteur pour quand on change la valeur du bouton select
+document.getElementById('genre').addEventListener('change', changeGenre);
+
 // Charger les premiers films
 loadMovies();
 // Quand on scroll, on verifie si infinite scroll est necessaire

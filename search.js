@@ -9,11 +9,11 @@ search.addWidgets([
     instantsearch.widgets.searchBox({
         container: '#searchbox',
         placeholder: 'Search for movies...',
-        showReset: false, // Désactiver le bouton de réinitialisation
-        showSubmit: false // Désactiver la soumission si tu veux enlever la loupe
+        showReset: false,
+        showSubmit: false
     }),
 
-    instantsearch.widgets.infiniteHits({
+    instantsearch.widgets.hits({
         container: '#hits',
         templates: {
             item: `
@@ -25,10 +25,7 @@ search.addWidgets([
             </article>
             `,
             empty: '<p class="no-results">No results found.</p>',
-            showMoreText: 'Show more',
-            loadMoreText: 'Loading more...'
         },
-        showMore: true,
     })
 ]);
 
@@ -43,5 +40,3 @@ search.on('render', () => {
 });
 
 search.start();
-
-// CHanger ça pour que ce soit infini et que le bouton show more n'existe plus  
