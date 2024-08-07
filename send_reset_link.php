@@ -1,4 +1,9 @@
 <?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+require 'vendor/autoload.php';
+
 if (isset($_POST["reset"])) {
     $email = $_POST["email"];
 
@@ -27,26 +32,45 @@ if (isset($_POST["reset"])) {
             $sth->bindParam(':email', $email, PDO::PARAM_STR);
             $sth->bindParam(':token', $token, PDO::PARAM_STR);
             $sth->bindParam(':expiry', $expiry, PDO::PARAM_STR);
+            $sth->execute();
 
-            if ($sth->execute()) {
-                echo "Token inséré avec succès.";
-            } else {
-                echo "Échec de l'insertion du token.";
-            }
+            // Envoyer l'email de réinitialisation avec PHPMailer
+            $resetLink = "http://localhost/getflix/reset_password.php?token=" . $token;
 
+            $mail = new PHPMailer(true);
 
-            // Envoyer l'email
-            $resetLink = "localhost/getflix/reset_password.php?token=" . $token;
-            echo "Lien de réinitialisation : " . $resetLink; // Affichez le lien pour vérifier qu'il est correct
+            try {
+                // Paramètres du serveur
+                $mail->isSMTP();
+                $mail->Host = 'smtp.gmail.com';
+                $mail->SMTPAuth = true;
+                $mail->Username = 'martin.gausseran@gmail.com'; // Votre adresse email Gmail
+                $mail->Password = 'ajib ceop naog lnxx'; // Mot de passe d'application
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Utiliser PHPMailer::ENCRYPTION_STARTTLS
+                $mail->Port = 587;
 
-            $subject = "Réinitialisation du mot de passe";
-            $message = "Cliquez sur ce lien pour réinitialiser votre mot de passe : " . $resetLink;
-            $headers = "From: martin.gausseran@gmail.com";
+                // Désactiver la vérification SSL (optionnel)
+                $mail->SMTPOptions = array(
+                    'ssl' => array(
+                        'verify_peer' => false,
+                        'verify_peer_name' => false,
+                        'allow_self_signed' => true
+                    )
+                );
 
-            if (mail($email, $subject, $message, $headers)) {
-                echo "Un email de réinitialisation a été envoyé à votre adresse email.";
-            } else {
-                echo "Une erreur est survenue lors de l'envoi de l'email.";
+                // Destinataires
+                $mail->setFrom('martin.gausseran@gmail.com', 'Martin Gausseran');
+                $mail->addAddress($email);
+
+                // Contenu de l'email
+                $mail->isHTML(true);
+                $mail->Subject = 'Réinitialisation du mot de passe';
+                $mail->Body    = 'Cliquez sur ce lien pour réinitialiser votre mot de passe : <a href="' . $resetLink . '">' . $resetLink . '</a>';
+
+                $mail->send();
+                echo 'Un email de réinitialisation a été envoyé à votre adresse email.';
+            } catch (Exception $e) {
+                echo "Une erreur est survenue lors de l'envoi de l'email : {$mail->ErrorInfo}";
             }
         } else {
             echo "Aucun compte n'est associé à cet email.";
@@ -55,3 +79,4 @@ if (isset($_POST["reset"])) {
         echo 'Erreur : ' . $e->getMessage();
     }
 }
+?>
