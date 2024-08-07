@@ -1,0 +1,186 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* font-family: "Inter"; */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
+/* font-family: "Newsreader"
+font-weight: 500; */
+
+/* violet
+color: 9003FF */
+
+* {
+    background-color: rgb(6, 6, 6);
+  }
+  
+html {
+      height: auto;
+      margin: 0%;
+      padding: 0%;
+}
+body {
+      margin: 0;
+      top: auto;
+      padding: 0%;
+}  
+  
+main {
+      margin-left: 4vh;
+      margin-right: 4vh;
+  
+}
+
+#movie1{
+    margin-top: 4vh;
+    margin-right: 5vh;
+    z-index: 1;
+    background: none;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 0;  
+    align-items: center;
+    background: none;  
+}
+
+.titres {
+      background: none;
+      font-family: "Newsreader", light;
+      font-weight: 300;
+      font-size: 4rem;
+      color: white;
+      margin-top: 0;
+      margin-bottom: 0;
+}
+
+.texte {
+    font-family: "Newsreader";
+    font-weight: 200;
+    font-size: 1.3rem;
+    color: white; 
+    margin: 1vh 0 0;
+}
+
+#lecture{ 
+    margin-left: 10vh;
+    display: flex;
+    align-items: baseline;
+}
+
+#infos{
+    
+    margin-right: 5vh;
+    position: relative;
+    z-index: 1;
+    background: none;
+    width: auto;
+    display: flex;
+    justify-content: space-between;    
+}
+
+.purple-divider {
+      position: relative;
+      border: 0;
+      height: 2px;
+      background-color: blueviolet;
+      border-radius: 5px;
+      margin-top: 2vh;
+      margin-bottom: 3vh;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+}
+
+.butviolet {
+    font-family: "Inter";
+    font-size: 1rem;
+    font-weight: 500 !important;
+    color: aliceblue;
+    background-color: blueviolet;
+    margin-right: 1vh;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px; /* Coins arrondis */
+    box-shadow: none; 
+    
+}
+
+.butblanc {
+    color: blueviolet;
+    margin-right: 3vh;
+    font-family: "Inter";
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 800 !important;
+    background-color: rgb(255, 107, 0);
+    margin-right: 3vh;
+    padding: 6px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px; /* Coins arrondis */
+    box-shadow: none; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.purple-divider {
+    position: relative;
+    border: 0;
+    height: 2px; 
+    background-color: blueviolet; 
+    margin-left: 3vh;
+    margin-right: 3vh;
+    border-radius: 5px;
+}
+
+
+#propal {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+}
+
+.movie-item {
+    flex: 0 0 calc(20% - 10px); /* Adjust this value to ensure 5 items per row, including margins */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+}
+
+.poster {
+    border: solid red;
+    width: 242px;
+    height: 161px;
+}
+
+.text-container {
+    width: 242px; /* Match the width of the .poster */
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    margin: 0%;
+}
