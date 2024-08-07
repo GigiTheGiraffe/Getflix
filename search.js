@@ -38,5 +38,16 @@ search.on('render', () => {
         resultsContainer.style.display = 'block'; // Afficher les résultats si la barre de recherche a une valeur
     }
 });
+// Lorsqu'on clique en dehors de la zone de hit ou de la searchbox, on cache la zone de hit //FONCTIONNE PAS
+document.addEventListener('click', (event) => {
+    const searchBox = document.getElementById('searchbox');
+    const resultsContainer = document.getElementById('hits');
+    if (!searchBox.contains(event.target) && !resultsContainer.contains(event.target)) {
+        resultsContainer.style.display = 'none';
+    }
+    if (searchBox.contains(event.target)) {
+        resultsContainer.style.display = 'block';
+    }
+});
 
 search.start();

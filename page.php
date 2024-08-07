@@ -47,7 +47,11 @@
                     <option value="war">War</option>
                     <option value="western">Western</option>
                 </select>
-                <button class="butblanc">a-z</button>
+                <select class="butblanc" id="sort">
+                    <option value="" >Sort by date</option>
+                    <option value="asc">Oldest first</option>
+                    <option value="desc">Newest first</option>
+                </select>
             </article>
         </section>
         <hr class="purple-divider">

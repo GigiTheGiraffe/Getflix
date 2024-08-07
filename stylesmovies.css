@@ -172,7 +172,7 @@ color: 9003FF */
     top: 90px; /* À ajuster selon la hauteur de la barre de recherche */
     left: 12.5%;
     width: 75%; /* Prendre toute la largeur */
-    height: 50vh; /* Prendre 50% de la hauteur de la page */
+    height: 20vh; /* Prendre 20% de la hauteur de la page */
     background-color: gainsboro; /* Fond noir pour le conteneur des résultats */
     padding: 10px; /* Espacement interne */
     overflow-y: auto; /* Défilement vertical */

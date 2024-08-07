@@ -6,11 +6,12 @@ const limit = 20;
 let loading = false;
 // Genre du film 
 let currentGenre = null;
-console.log(currentGenre)
 // Endroit ou append les films
 const moviesContainer = document.getElementById('propal');
 // Ensemble pour garder trace des ID de films affichés
 let displayedMovieTitle = new Set();
+// Est ce qu'il faut sort?
+let sort = null;
 async function loadMovies() {
     if (loading) return;
     loading = true;
@@ -22,7 +23,10 @@ async function loadMovies() {
     if (currentGenre) {
         params.append('genre', currentGenre);
     }
-
+    // Ajout du sorting si il existe
+    if (sort) {
+        params.append('sort', sort);
+    }
     try {
         // On recupere la reponse avec le php
         const response = await fetch('show_movies.php', {
@@ -100,9 +104,21 @@ function changeGenre() {
     // Reactiver l'ecouteur d'evenements de défilement psq j'ai l'impression qu'il ne se met pas tout le monde
     window.addEventListener('scroll', handleInfiniteScroll);
 }
-// Rajoute ecouteur pour quand on change la valeur du bouton select
+// Rajoute ecouteur pour quand on change la valeur du bouton select genre
 document.getElementById('genre').addEventListener('change', changeGenre);
-
+// Si le genre change, on remet le offset a 0, on met la liste des films deja affichés a 0, on met la liste de film a 0 puis on charge 20 films
+function changeSort() {
+    sort = document.getElementById('sort').value;
+    offset = 0;
+    displayedMovieTitle.clear();
+    moviesContainer.innerHTML = '';
+    loadMovies();
+    window.removeEventListener('scroll', handleInfiniteScroll);
+    // Reactiver l'ecouteur d'evenements de défilement psq j'ai l'impression qu'il ne se met pas tout le monde
+    window.addEventListener('scroll', handleInfiniteScroll);
+}
+// Rajoute ecouteur pour quand on change la valeur du bouton select sort
+document.getElementById('sort').addEventListener('change', changeSort);
 // Charger les premiers films
 loadMovies();
 // Quand on scroll, on verifie si infinite scroll est necessaire
