@@ -1,9 +1,3 @@
-<?php
-include("account_connection.php");
-include("account_creation.php");
-session_start();
-echo "Bienvenue, " . $_SESSION['user_name'];
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +21,7 @@ echo "Bienvenue, " . $_SESSION['user_name'];
                             <input type="password" id="password" name="password" required>
                         </div>
                         <div>
-                            <button type="submit" name="check">Log in</button>
+                            <button type="submit">Log in</button>
                         </div>
                 </form>
             </article>
@@ -55,7 +49,7 @@ echo "Bienvenue, " . $_SESSION['user_name'];
                         <label for="terms">Accept terms and conditions</label>
                     </div>
                     <div>
-                        <button type="submit" name="subscribe">Subscribe</button>
+                        <button type="submit">Subscribe</button>
                     </div>
                 </form>
             </article>
