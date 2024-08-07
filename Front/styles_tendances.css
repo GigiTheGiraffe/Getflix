@@ -1,0 +1,157 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* font-family: "Inter"; */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
+/* font-family: "Newsreader"
+font-weight: 500; */
+
+/* violet
+color: 9003FF */
+
+* {
+    background-color: rgb(6, 6, 6);
+}
+
+#blocalaune {
+    display: flex;
+    align-items: stretch;
+    padding: 1%;
+}
+
+.blocresume .main-list {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de se répartir sur plusieurs lignes */
+    list-style-type: none; /* Supprime les puces de liste */
+    padding: 0; /* Enlève le padding par défaut */
+    margin: 0; /* Enlève le margin par défaut */
+}
+
+.blocresume .main-list > li {
+    flex: 0 0 33.33%; /* Chaque <li> occupe un tiers de la ligne */
+    box-sizing: border-box; /* Assure que padding et border sont inclus dans la largeur */
+    padding: 10px; /* Ajoute un espace entre les éléments */
+}
+
+.blocresume .poster {
+    width: 439px; /* Assure que les images occupent toute la largeur du <li> */
+    height: 308px; /* Maintient le ratio d'aspect des images */
+    display: block; /* Supprime les espaces blancs en dessous des images */
+}
+
+.blocresume ul ul {
+    padding: 0; /* Enlève le padding par défaut des sous-listes */
+    margin: 0; /* Enlève le margin par défaut des sous-listes */
+    list-style-type: none; /* Supprime les puces des sous-listes */
+    justify-content: space-between;
+    display: flex;
+}
+
+.blocresume .texte {
+    text-align: center; /* Centre le texte */
+    margin: 5px 0; /* Ajoute un peu d'espace vertical autour du texte */
+}
+
+
+.poster {
+    border: solid red;
+    width: 439px;
+    height: 308px;
+}
+
+#infotendance {
+    background-color: rgb(0, 255, 140);
+    width: auto;
+    height: auto;
+    padding: 10%;
+    
+}
+
+#alaune {
+    background-color: aqua;
+    width: 80%;
+    height: 50vh;
+}
+.backdrop {
+   background: none;
+    height: 120%;
+    width: 100%;
+    display: block;
+}
+
+#info{
+    position: relative;
+    z-index: 1;
+    background-color: blue;
+    width: auto;
+    display: flex;
+    justify-content: space-between;    
+}
+
+.info_film {
+    margin-left: 10vh;
+    display: flex;
+    align-items: baseline;
+    /* background-color: aquamarine; */
+   
+}
+
+.titres {
+   
+    background: none;
+    font-family: "Newsreader", light;
+    font-style: light;
+    font-weight: 300;
+    font-size: 4rem;
+    color: white;
+    padding-left: 3vh;
+    margin-top: 3vh;
+    margin-bottom: 0;
+}
+
+.titres2 {
+    font-family: "Newsreader";
+    font-weight: 300;
+    font-size: 2.4rem;
+    color: white; 
+    margin-left: 3vh;
+}
+
+.texte {
+    font-family: "Newsreader";
+    font-weight: 200;
+    font-size: 1.3rem;
+    color: white; 
+}
+
+.titreside {
+    background: none;
+    font-family: "Inter";
+    font-weight: 300;
+    font-size: 1.1rem;
+    color: white; 
+    margin: 0%;
+    padding-left: 3vh;
+}
+
+.overview {
+    margin-left: 3vh;
+    font-family: "Inter";
+    font-weight: 300;
+    font-size: 1rem;
+    color: white; 
+}
+
+.purple-divider {
+    position: relative;
+    border: 0;
+    height: 2px;
+    background-color: blueviolet;
+    margin-left: 3vh;
+    margin-right: 3vh;
+    border-radius: 5px;
+    margin-top: 2vh;
+}
