@@ -45,9 +45,6 @@ include 'get_movie.php';
                         <textarea class="textarea" id="message" name="message" rows="4" cols="50" required></textarea>
                         <label input="message" class="comment">Give us your impression on this movie !<button class="butviolet" type="submit">Send</button></label> 
                     </div>
-                    <div>
-                        
-                    </div>
                 </form>
             </article>
         </section>
@@ -60,7 +57,7 @@ include 'get_movie.php';
                 <h2 class="titres2">More like this</h2>
                 <ul id="propal">
                     <?php foreach ($recommendations as $filmInfo) { ?> <!--image movie poster and over tittle movie-->
-                        <li><a href="http://localhost/Getflix/fiche_film.php?title=<?= $filmInfo['title'] ?>&source=page.php"><img src="<?= $filmInfo['poster_path'] ?>" class="poster" alt="Poster of <?= $filmInfo['title'] ?>"><h2 class="titres2 overlay-title"><?= $filmInfo['title'] ?></h2></a></li>
+                        <li><a href="http://localhost/Getflix/fiche_film.php?title=<?= urlencode($filmInfo['title']) ?>&source=page.php"><img src="<?= $filmInfo['poster_path'] ?>" class="poster" alt="Poster of <?= $filmInfo['title'] ?>"><h2 class="titres2 overlay-title"><?= $filmInfo['title'] ?></h2></a></li>
                     <?php } ?>
                 </ul>
             </article>

@@ -59,7 +59,7 @@ async function loadMovies() {
                     genre = film.genre_1;
                 }
                 movieItem.innerHTML = `
-                    <a href="fiche_film.php?title=` + film.title + `&source=page.php">
+                    <a href="fiche_film.php?title=` + encodeURIComponent(filmTitle) + `&source=page.php">
                         <img class="poster" loading="lazy" src="${film.poster_path}" alt="poster of ${film.title}">
                     </a>
                     <div class="text-container">
