@@ -7,7 +7,7 @@ if (isset($_POST["update"])) {
     $servername = 'localhost';
     $db_username = 'root';
     $db_password = '';
-    $dbname = 'users';
+    $dbname = 'flouflix';
     try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $db_username, $db_password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -22,7 +22,7 @@ if (isset($_POST["update"])) {
             echo "Votre token existe";
             // Mettre à jour le mot de passe dans la table des utilisateurs
             $email = $result['email'];
-            $sth = $conn->prepare("UPDATE authentification SET password = :password WHERE email = :email");
+            $sth = $conn->prepare("UPDATE users SET password = :password WHERE email = :email");
             $sth->bindParam(':password', $new_password, PDO::PARAM_STR);
             $sth->bindParam(':email', $email, PDO::PARAM_STR);
             $sth->execute();

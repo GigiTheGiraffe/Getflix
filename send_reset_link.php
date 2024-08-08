@@ -11,13 +11,13 @@ if (isset($_POST["reset"])) {
     $servername = 'localhost';
     $db_username = 'root';
     $db_password = '';
-    $dbname = 'users';
+    $dbname = 'flouflix';
     try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $db_username, $db_password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Vérifier si l'email existe dans la base de données
-        $sth = $conn->prepare("SELECT * FROM authentification WHERE email = :email");
+        $sth = $conn->prepare("SELECT * FROM users WHERE email = :email");
         $sth->bindParam(':email', $email, PDO::PARAM_STR);
         $sth->execute();
         $result = $sth->fetch(PDO::FETCH_ASSOC);
@@ -45,7 +45,7 @@ if (isset($_POST["reset"])) {
                 $mail->Host = 'smtp.gmail.com';
                 $mail->SMTPAuth = true;
                 $mail->Username = 'martin.gausseran@gmail.com'; // Votre adresse email Gmail
-                $mail->Password = 'ajib ceop naog lnxx'; // Mot de passe d'application
+                $mail->Password = ''; // Mot de passe d'application
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Utiliser PHPMailer::ENCRYPTION_STARTTLS
                 $mail->Port = 587;
 
