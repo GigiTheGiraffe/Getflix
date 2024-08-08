@@ -45,7 +45,7 @@ async function loadMovies() {
         // Met à jour l'offset pour la prochaine requête
         offset += limit;
         // On va iterer dans chaque film renvoyé
-        moviesData.forEach(film => {
+        moviesData.forEach(film => {    
             // Vérifie si le nom du film a déjà été affiché
             if (!displayedMovieTitle.has(film.title)) {
                 displayedMovieTitle.add(film.title); // Ajoute le nom du film à l'ensemble
@@ -59,7 +59,7 @@ async function loadMovies() {
                     genre = film.genre_1;
                 }
                 movieItem.innerHTML = `
-                    <a href="#">
+                    <a href="fiche_film.php?title=` + film.title + `&source=page.php">
                         <img class="poster" loading="lazy" src="${film.poster_path}" alt="poster of ${film.title}">
                     </a>
                     <div class="text-container">

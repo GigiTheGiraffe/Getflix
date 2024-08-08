@@ -36,6 +36,7 @@ include 'delete.php';
                         <tr>
                             <th>Username</th>
                             <th>Email</th>
+                            <th>Role</th>
                             <th colspan="1">Delete</th>
                         </tr>
                     </thead>
@@ -47,6 +48,7 @@ include 'delete.php';
                             <tr>
                                 <td><?= $row['user'] ?></td>
                                 <td><?= $row['email'] ?></td>
+                                <td><?= $row['role'] ?></td>
                                 <td>
                                     <form method="post"><button type="submit" name="deleteUser" class="btn" value="<?= $row['id'] ?>">Delete</button></form>
                                 </td>

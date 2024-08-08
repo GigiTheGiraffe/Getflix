@@ -15,7 +15,7 @@ function insertIntoDb($responses) {
       $movie_id = $film['id'];
       $trailerLink = getTrailerLink($movie_id);
       $arrayProducersActors = getCastCrew($movie_id);
-      $stmt = $conn->prepare("INSERT INTO movieslist (movie_DB_Id, vote_average, poster_path, backdrop_path, original_language, title, overview, release_date, genre_1, genre_2, genre_3, trailer_link, producers, actors) VALUES (:movie_DB_Id, :vote_average, :poster_path, :backdrop_path, :original_language, :title, :overview, :release_date, :genre_1, :genre_2, :genre_3, :trailer_link, :producers, :actors)");
+      $stmt = $conn->prepare("INSERT INTO Movies (movie_DB_Id, vote_average, poster_path, backdrop_path, original_language, title, overview, release_date, genre_1, genre_2, genre_3, trailer_link, producers, actors) VALUES (:movie_DB_Id, :vote_average, :poster_path, :backdrop_path, :original_language, :title, :overview, :release_date, :genre_1, :genre_2, :genre_3, :trailer_link, :producers, :actors)");
       // Lier les valeurs aux paramètres
       $stmt->bindParam(':movie_DB_Id', $movie_id);
       $stmt->bindParam(':vote_average', $film['vote_average']);
