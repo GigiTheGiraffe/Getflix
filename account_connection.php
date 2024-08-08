@@ -19,7 +19,6 @@ if (isset($_POST["check"])) {
             // On établit la connexion
             $conn = new PDO("mysql:host=$servername;dbname=$dbname", $db_username, $db_password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo 'Connexion à la base de données réussie.<br>';
 
             // Préparer et exécuter la requête pour vérifier l'utilisateur et l'email
             $sth = $conn->prepare("SELECT * FROM users WHERE user = :identifier OR email = :identifier");

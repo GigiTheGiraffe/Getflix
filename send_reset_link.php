@@ -64,16 +64,19 @@ if (isset($_POST["reset"])) {
 
                 // Contenu de l'email
                 $mail->isHTML(true);
-                $mail->Subject = 'Réinitialisation du mot de passe';
-                $mail->Body    = 'Cliquez sur ce lien pour réinitialiser votre mot de passe : <a href="' . $resetLink . '">' . $resetLink . '</a>';
+                $mail->Subject = 'Password reset';
+                $mail->Body    = 'Click on the following link to reset your password : <a href="' . $resetLink . '">' . $resetLink . '</a>';
 
                 $mail->send();
-                echo 'Un email de réinitialisation a été envoyé à votre adresse email.';
+                echo "<h2>Check your mailbox.</h2>
+                <p>A new link has been sent to you</p>
+                <p>to reset your password!</p>
+                <p>See you in a little bit.</p>";
             } catch (Exception $e) {
                 echo "Une erreur est survenue lors de l'envoi de l'email : {$mail->ErrorInfo}";
             }
         } else {
-            echo "Aucun compte n'est associé à cet email.";
+            echo "There is no existing account with this email address.";
         }
     } catch (PDOException $e) {
         echo 'Erreur : ' . $e->getMessage();
