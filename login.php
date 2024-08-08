@@ -1,3 +1,9 @@
+<?php
+session_start();
+include("account_creation.php");
+include("account_connection.php");
+echo "Bienvenue, " . $_SESSION['user_name'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +16,7 @@
     <main>
         <section class="log" style="display: flex; gap: 5vh;">
             <article class="login">
-                 <form action="/login" method="post" style="border: 1px solid #000; padding: 20px; width: 300px; margin: 0 auto;"> <!--pour linstant ptit elements css dedans  -->
+                 <form action="/login" method="POST" style="border: 1px solid #000; padding: 20px; width: 300px; margin: 0 auto;"> <!--pour linstant ptit elements css dedans  -->
                     <h2>Log in</h2>
                         <div>
                             <label for="identifier">Email or Username :</label>
@@ -26,11 +32,11 @@
                 </form>
             </article>
             <article class="sign">
-                <form action="/signup" method="post" style="border: 1px solid #000; padding: 20px; width: 300px; margin: 0 auto;">
+                <form method="POST" style="border: 1px solid #000; padding: 20px; width: 300px; margin: 0 auto;">
                     <h2>Sign in</h2>
                     <div>
                         <label for="username">Username :</label>
-                        <input type="text" id="username" name="username" required>
+                        <input type="text" id="username" name="user" required>
                     </div>
                     <div>
                         <label for="email">Email :</label>
@@ -49,7 +55,7 @@
                         <label for="terms">Accept terms and conditions</label>
                     </div>
                     <div>
-                        <button type="submit">Subscribe</button>
+                        <button type="submit" name="subscribe">Subscribe</button>
                     </div>
                 </form>
             </article>

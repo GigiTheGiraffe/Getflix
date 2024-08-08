@@ -3,6 +3,11 @@ if (isset($_POST["subscribe"])) {
     $user = $_POST["user"];
     $email = $_POST["email"];
     $password = $_POST["password"];
+    $confirm_password = $_POST["confirm_password"];
+
+    if ($password !== $confirm_password) {
+        echo "<p>Les mots de passe ne correspondent pas.</p>";
+    } else {
     
     // Expressions régulières pour valider les noms d'utilisateur et les mots de passe
     $usernamePattern = '/^[a-zA-Z0-9_-]+$/';
@@ -45,5 +50,6 @@ if (isset($_POST["subscribe"])) {
             echo 'Impossible de traiter les données. Erreur : ' . $e->getMessage();
         }
     }
+}
 }
 ?>
