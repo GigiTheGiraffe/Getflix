@@ -27,7 +27,7 @@ echo "Bienvenue, " . $_SESSION['user_name'];
                     <input id="email" type="email" name="email">
                     <label class="texte" for="password">Mot de passe
                     <input id="password" type="password" name="password"></label>
-                    <button type="submit" class="butviolet" id="check" name="check">Se connecter</button>
+                    <button type="submit" class="butviolet" id="chek" name="check">Se connecter</button>
                 </form>
             </article>
             <article class="border">
