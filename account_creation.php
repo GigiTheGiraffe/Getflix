@@ -18,13 +18,13 @@ if (isset($_POST["subscribe"])) {
             $servername = 'localhost';
             $username = 'root';
             $dbpassword = '';
-            $dbname = 'users';
+            $dbname = 'flouflix';
 
             // On établit la connexion
             $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $dbpassword);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $sth = $conn->prepare("SELECT * FROM authentification WHERE user = :user OR email = :email");
+            $sth = $conn->prepare("SELECT * FROM users WHERE user = :user OR email = :email");
             $sth->bindParam(':user', $user);
             $sth->bindParam(':email', $email);
             $sth->execute();
@@ -34,7 +34,7 @@ if (isset($_POST["subscribe"])) {
                 echo "<p>Le nom d'utilisateur ou l'adresse mail existe déjà.</p>";
             } else {
                 // Insérer les nouvelles informations
-                $sth = $conn->prepare("INSERT INTO authentification (user, password, email) VALUES(:user, :password, :email)");
+                $sth = $conn->prepare("INSERT INTO users (user, password, email) VALUES(:user, :password, :email)");
                 $sth->bindParam(':user', $user);
                 $sth->bindParam(':password', $hashedPassword);
                 $sth->bindParam(':email', $email);

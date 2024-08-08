@@ -17,7 +17,7 @@ if (isset($_POST["check"])) {
             $servername = 'localhost';
             $db_username = 'root';
             $db_password = ''; // Mot de passe de la base de données
-            $dbname = 'users';
+            $dbname = 'flouflix';
 
             // On établit la connexion
             $conn = new PDO("mysql:host=$servername;dbname=$dbname", $db_username, $db_password);
@@ -25,7 +25,7 @@ if (isset($_POST["check"])) {
             echo 'Connexion à la base de données réussie.<br>';
 
             // Préparer et exécuter la requête pour vérifier l'utilisateur et l'email
-            $sth = $conn->prepare("SELECT * FROM authentification WHERE user = :user AND email = :email");
+            $sth = $conn->prepare("SELECT * FROM users WHERE user = :user AND email = :email");
             $sth->bindParam(':user', $user, PDO::PARAM_STR);
             $sth->bindParam(':email', $email, PDO::PARAM_STR);
             $sth->execute();
