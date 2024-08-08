@@ -16,7 +16,7 @@ echo "Bienvenue, " . $_SESSION['user_name'];
     <main>
         <section class="log" style="display: flex; gap: 5vh;">
             <article class="login">
-                 <form action="/login" method="POST" style="border: 1px solid #000; padding: 20px; width: 300px; margin: 0 auto;"> <!--pour linstant ptit elements css dedans  -->
+                 <form method="POST" style="border: 1px solid #000; padding: 20px; width: 300px; margin: 0 auto;"> <!--pour linstant ptit elements css dedans  -->
                     <h2>Log in</h2>
                         <div>
                             <label for="identifier">Email or Username :</label>
@@ -27,7 +27,7 @@ echo "Bienvenue, " . $_SESSION['user_name'];
                             <input type="password" id="password" name="password" required>
                         </div>
                         <div>
-                            <button type="submit">Log in</button>
+                            <button type="submit" name="check">Log in</button>
                         </div>
                 </form>
             </article>
