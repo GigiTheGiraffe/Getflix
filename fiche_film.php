@@ -3,19 +3,21 @@ include 'get_movie.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesfiche.css">
     <title>FlouFix</title>
 </head>
+
 <body>
     <main>
         <a href="<?= $source ?>">Go back</a> <!-- STYLISER GO BACKKKKKKKKKKKKKKKKKKKKK -->
         <section id="part1">
             <article class="img_movie">
                 <div class="gradient-overlay"></div><!--note -->
-                <img src="<?= $movieInfo['backdrop_path'] ?>" class="backdrop" alt = "Shot taken from <?= $movieInfo['title'] ?>">
+                <img src="<?= $movieInfo['backdrop_path'] ?>" class="backdrop" alt="Shot taken from <?= $movieInfo['title'] ?>">
             </article>
             <section id="info">
                 <article class="info_film">
@@ -24,18 +26,33 @@ include 'get_movie.php';
                     <h6 class="titreside"><?= round($movieInfo['vote_average'], 1) ?>/10</h6>
                 </article>
                 <article id="lecture">
-                    <button  class="butviolet">Watch</button>
+                    <button class="butviolet" id="trailerBtn">Watch</button>
                     <button class="butblanc" id="commentBtn">Comment</button>
                 </article>
             </section>
         </section>
         <hr class="purple-divider">
-        <section id="part3" >
+        <section id="part4" class="hidden">
+            <iframe width="100%" height="500px" src="https://www.youtube.com/embed/<?= explode('=', $movieInfo['trailer_link'])[1] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+        <section id="part3" class="hidden">
             <article class="otherCom">
                 <ul class="listCom">
-                    <li><p class="com">feeffezfhziefizfz</p><p class="com">feeffezfhziefizfz</p><p class="com">feeffezfhziefizfz</p></li>
-                    <li><p class="com">cafezfjzeofjzof</p><p class="com">feeffezfhziefizfz</p><p class="com">feeffezfhziefizfz</p></li>
-                    <li><p class="com">cazejfozejofjzofzofjzpejfopzjfozj</p><p class="com">feeffezfhziefizfz</p><p class="com">feeffezfhziefizfz</p></li>
+                    <li>
+                        <p class="com">feeffezfhziefizfz</p>
+                        <p class="com">feeffezfhziefizfz</p>
+                        <p class="com">feeffezfhziefizfz</p>
+                    </li>
+                    <li>
+                        <p class="com">cafezfjzeofjzof</p>
+                        <p class="com">feeffezfhziefizfz</p>
+                        <p class="com">feeffezfhziefizfz</p>
+                    </li>
+                    <li>
+                        <p class="com">cazejfozejofjzofzofjzpejfopzjfozj</p>
+                        <p class="com">feeffezfhziefizfz</p>
+                        <p class="com">feeffezfhziefizfz</p>
+                    </li>
                 </ul>
             </article>
             <article class="userCom">
@@ -56,7 +73,9 @@ include 'get_movie.php';
                 <h2 class="titres2">More like this</h2>
                 <ul id="propal">
                     <?php foreach ($recommendations as $filmInfo) { ?>
-                        <li><a href="http://localhost/Getflix/fiche_film.php?id=<?= $filmInfo['id'] ?>&source=page.php"><img src="<?= $filmInfo['poster_path'] ?>" class="poster" alt="Poster of <?= $filmInfo['title'] ?>"><h2 class="titres2 overlay-title"><?= $filmInfo['title'] ?></h2></a></li>
+                        <li><a href="http://localhost/Getflix/fiche_film.php?id=<?= $filmInfo['id'] ?>&source=page.php"><img src="<?= $filmInfo['poster_path'] ?>" class="poster" alt="Poster of <?= $filmInfo['title'] ?>">
+                                <h2 class="titres2 overlay-title"><?= $filmInfo['title'] ?></h2>
+                            </a></li>
                     <?php } ?>
                 </ul>
             </article>
@@ -64,4 +83,5 @@ include 'get_movie.php';
     </main>
     <script src="fiche_film.js"></script>
 </body>
+
 </html>

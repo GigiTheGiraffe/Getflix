@@ -292,9 +292,8 @@
     }
 }
 
-#part3 {
+#part3, #part4 {
     margin: 6vh 10vh 6vh 10vh ;
-    display: none;
 }
 
 .otherCom {
@@ -343,4 +342,12 @@ ul li {
     background-color: blueviolet;
     border-radius: 30px;
     height: 20vh;
+}
+
+.hidden {
+    display: none; /* Pour masquer l'élément */
+}
+
+.visible {
+    display: block; /* Pour afficher l'élément */
 }
