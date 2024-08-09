@@ -1,5 +1,7 @@
 <?php
 include 'get_movie.php';
+include 'get_comments_film';
+include 'submit_comment.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,29 +40,20 @@ include 'get_movie.php';
         <section id="part3" class="hidden">
             <article class="otherCom">
                 <ul class="listCom">
-                    <li>
-                        <p class="com">feeffezfhziefizfz</p>
-                        <p class="com">feeffezfhziefizfz</p>
-                        <p class="com">feeffezfhziefizfz</p>
-                    </li>
-                    <li>
-                        <p class="com">cafezfjzeofjzof</p>
-                        <p class="com">feeffezfhziefizfz</p>
-                        <p class="com">feeffezfhziefizfz</p>
-                    </li>
-                    <li>
-                        <p class="com">cazejfozejofjzofzofjzpejfopzjfozj</p>
-                        <p class="com">feeffezfhziefizfz</p>
-                        <p class="com">feeffezfhziefizfz</p>
-                    </li>
+                    <?php foreach ($comments as $comment) { ?>
+                        <li>
+                            <p class="com"><?= $comment['user'] ?></p>
+                            <p class="com"><?= substr($comment['comment_date'], 0, 10) ?></p>
+                            <p class="com"><?= $comment['content'] ?></p>
+                        </li>
+                    <?php } ?>
                 </ul>
             </article>
             <article class="userCom">
-                <form action="">
-                    <div>
-                        <textarea class="textarea" id="message" name="message" rows="4" cols="50" required></textarea>
-                        <label input="message" class="comment">Give us your impression on this movie !<button class="butviolet" type="submit">Send</button></label>
-                    </div>
+                <form id="commentForm" method="post">
+                    <label for="message" class="comment">Give us your impression on this movie!</label>
+                    <textarea id="message" name="message" class="comment" rows="4" cols="50" placeholder="Write your comment here..." required></textarea>
+                    <button id="submit" class="butviolet" type="submit">Send</button>
                 </form>
             </article>
         </section>

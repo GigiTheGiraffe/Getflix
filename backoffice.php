@@ -3,6 +3,7 @@ include 'load_env.php';
 include 'get_comments.php';
 include 'get_users.php';
 include 'delete.php';
+include 'get_title_backoffice.php';
 ?>
 <!doctype html>
 <html lang="fr">
@@ -79,7 +80,7 @@ include 'delete.php';
                                     <td><?= $row['user'] ?></td>
                                     <td><?= $row['content'] ?></td>
                                     <td><?= $row['comment_date'] ?></td>
-                                    <td><?= $row['movie_title'] ?></td>
+                                    <td><?= getTitle($row['movie_DB_Id'])?></td>
                                     <td>
                                         <form method="post"><button type="submit" name="deleteComment" class="btn" value="<?= $row['comment_id'] ?>">Supp</button></form>
                                     </td>
