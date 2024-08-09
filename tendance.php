@@ -26,7 +26,9 @@ $firstMovie = $data['results'][0];
                     <h6 class="texte overview"><?php echo htmlspecialchars($firstMovie['overview']); ?></h6>
                 </aside>
                 <article class="backdrop">
+                <a href="http://localhost/Getflix/fiche_film.php?id=<?=$firstMovie['id'] ?>&source=tendance.php">
                 <img class="bdp" src="<?php echo 'https://image.tmdb.org/t/p/original' . $firstMovie['backdrop_path']; ?>" alt="Backdrop of <?php echo htmlspecialchars($firstMovie['title']); ?>">
+                </a>
                 </article>
         </section>x²
         </section>
@@ -34,7 +36,7 @@ $firstMovie = $data['results'][0];
             <ul class="main-list">
                 <?php foreach ($movies as $movie): ?>
                 <li>
-                    <a href="http://localhost/Getflix/fiche_film.php?title=<?= urlencode($movie['title']) ?>&source=tendance.php">
+                    <a href="http://localhost/Getflix/fiche_film.php?id=<?= $movie['id'] ?>&source=tendance.php">
                     <img class="poster" src="<?php echo 'https://image.tmdb.org/t/p/original' . $movie['poster_path']; ?>" alt="Poster of <?php echo htmlspecialchars($movie['title']); ?>">
                     <h5 class="texte title"><?php echo htmlspecialchars($movie['title']); ?></h5>
                     <h5 class="texte genreid"><?php echo htmlspecialchars(getGenreName($movie['genre_ids'][0])); ?></h5>

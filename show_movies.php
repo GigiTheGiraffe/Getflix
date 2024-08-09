@@ -36,15 +36,15 @@ try {
 
     // Préparer la requête en fonction de la présence du genre
     if ($genre && !$sort) {
-        $stmt = $conn->prepare("SELECT poster_path, title FROM Movies  WHERE genre_1 = :genre OR genre_2 = :genre OR genre_3 = :genre ORDER BY id LIMIT 20 OFFSET :offset");
+        $stmt = $conn->prepare("SELECT poster_path, title, id FROM Movies  WHERE genre_1 = :genre OR genre_2 = :genre OR genre_3 = :genre ORDER BY id LIMIT 20 OFFSET :offset");
         $stmt->bindParam(':genre', $genre, PDO::PARAM_STR);
     } elseif ($sort && !$genre) {
-        $stmt = $conn->prepare("SELECT poster_path, title, genre_1, release_date FROM Movies ORDER BY release_date $sort LIMIT 20 OFFSET :offset");
+        $stmt = $conn->prepare("SELECT poster_path, title, genre_1, release_date, id FROM Movies ORDER BY release_date $sort LIMIT 20 OFFSET :offset");
     } elseif ($sort && $genre) {
         $stmt = $conn->prepare("SELECT poster_path, title FROM Movies WHERE genre_1 = :genre OR genre_2 = :genre OR genre_3 = :genre ORDER BY release_date $sort LIMIT 20 OFFSET :offset");
         $stmt->bindParam(':genre', $genre, PDO::PARAM_STR);
     } else {
-        $stmt = $conn->prepare("SELECT poster_path, title, genre_1 FROM Movies ORDER BY id LIMIT 20 OFFSET :offset");
+        $stmt = $conn->prepare("SELECT poster_path, title, genre_1, id FROM Movies ORDER BY id LIMIT 20 OFFSET :offset");
     }
 
     $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);

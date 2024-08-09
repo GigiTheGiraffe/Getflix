@@ -5,7 +5,7 @@ const limit = 20;
 // Booleen pour savoir si loading est deja entrain de travailler
 let loading = false;
 // Genre du film 
-let currentGenre = null;
+let currentGenre = document.getElementById('genre').value;
 // Endroit ou append les films
 const moviesContainer = document.getElementById('propal');
 // Ensemble pour garder trace des ID de films affichés
@@ -59,7 +59,7 @@ async function loadMovies() {
                     genre = film.genre_1;
                 }
                 movieItem.innerHTML = `
-                    <a href="fiche_film.php?title=` + encodeURIComponent(filmTitle) + `&source=page.php">
+                    <a href="fiche_film.php?id=` + film.id + `&source=page.php">
                         <img class="poster" loading="lazy" src="${film.poster_path}" alt="poster of ${film.title}">
                     </a>
                     <div class="text-container">
@@ -100,9 +100,9 @@ function changeGenre() {
     displayedMovieTitle.clear();
     moviesContainer.innerHTML = '';
     loadMovies();
-    window.removeEventListener('scroll', handleInfiniteScroll);
+    /*window.removeEventListener('scroll', handleInfiniteScroll);
     // Reactiver l'ecouteur d'evenements de défilement psq j'ai l'impression qu'il ne se met pas tout le monde
-    window.addEventListener('scroll', handleInfiniteScroll);
+    window.addEventListener('scroll', handleInfiniteScroll); */
 }
 // Rajoute ecouteur pour quand on change la valeur du bouton select genre
 document.getElementById('genre').addEventListener('change', changeGenre);
@@ -125,3 +125,8 @@ loadMovies();
 window.addEventListener('scroll', handleInfiniteScroll);
 // Verifier et charger plus de films si necessaire apres le chargement initial
 window.addEventListener('load', checkAndLoadMoreMovies);
+// Remet les boutons select à 0 
+window.addEventListener('beforeunload', function() {
+    document.getElementById('genre').selectedIndex = 0;
+    document.getElementById('sort').selectedIndex = 0;
+});

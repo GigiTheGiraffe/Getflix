@@ -26,7 +26,7 @@
             <article id="lecture">
 <!-- Bouton de genre-->
                 <select class="butviolet" id="genre">
-                    <option value="" >All</option>
+                    <option value="" selected="selected">All</option>
                     <option value="action">Action</option>
                     <option value="adventure">Adventure</option>
                     <option value="animation">Animation</option>
@@ -48,7 +48,7 @@
                     <option value="western">Western</option>
                 </select>
                 <select class="butblanc" id="sort">
-                    <option value="" >Sort by date</option>
+                    <option value="" selected="selected">Sort by date</option>
                     <option value="asc">Oldest first</option>
                     <option value="desc">Newest first</option>
                 </select>
@@ -63,7 +63,7 @@
     <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.24.0/dist/algoliasearch-lite.umd.js" integrity="sha256-b2n6oSgG4C1stMT/yc/ChGszs9EY/Mhs6oltEjQbFCQ=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.73.3/dist/instantsearch.production.min.js" integrity="sha256-c10z4sC06kjfoYbw7kBfYpe/CxFqjql/Jqv9yAMexsk=" crossorigin="anonymous"></script>
     <script src="search.js"></script>
-    <script src="infinite_scrolling.js"></script>
+    <script src="page.js"></script>
 </body>
 
 </html>
