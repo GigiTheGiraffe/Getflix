@@ -18,7 +18,7 @@ search.addWidgets([
         templates: {
             item: `
             <article class="hit">
-                <a href="{{trailer_link}}" class="hit-link">
+                <a href="fiche_film.php?id={{id}}&source=page.php" class="hit-link">
                     <img src="{{poster_path}}" alt="{{title}}">
                     <h4 class="hit-name">{{title}}</h4>
                 </a>
