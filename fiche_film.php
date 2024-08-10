@@ -75,6 +75,7 @@ include 'submit_comment.php';
         </section>
     </main>
     <script src="fiche_film.js"></script>
+    <script src="comment-validation.js"></script>
 </body>
 
 </html>
