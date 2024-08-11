@@ -38,24 +38,11 @@ body {
     background: none;
     color: white;
     text-decoration: none;
-}  
+}
   
 main {
       padding-left: 4vw;
       padding-right: 4vw;
-}
-
-#movie1{
-    margin-top: 4vh;
-    margin-right: 5vh;
-    z-index: 1;
-    background: none;
-    width: auto;
-    display: flex;
-    justify-content: space-between;
-    margin-right: 0;  
-    align-items: center;
-    background: none;  
 }
 
 .titres {
@@ -64,9 +51,14 @@ main {
       font-weight: 300;
       font-size: 4rem;
       color: white;
-      margin-top: 0;
-      margin-bottom: 0;
+      margin-top: 9vh;
+      margin-bottom: 9vh;
       text-align: center;
+}
+
+.titres {
+    margin-top: 9vh;
+    margin-bottom: 9vh;
 }
 
 .titres2 {
@@ -76,6 +68,7 @@ main {
     color: white; 
     margin-top: 4vh;
     background: none;
+    text-align: center;
 
 }
 
@@ -87,27 +80,19 @@ main {
     margin: 1vh 0 0;
 }
 
-#lecture{ 
-    margin-left: 10vh;
-    display: flex;
-    align-items: baseline;
-}
-
-#infos{
-    
-    margin-right: 5vh;
-    position: relative;
-    z-index: 1;
-    background: none;
-    width: auto;
-    display: flex;
-    justify-content: space-between;    
+h5.texte {
+    text-align: center;
+    padding-left: 9vw;
+    padding-right: 9vw;
+    margin-bottom: 6vh;
+    margin-top: 0;
 }
 
 .purple-divider {
       position: relative;
       border: 0;
       height: 2px;
+      background: linear-gradient(to right, blueviolet, rgb(255, 107, 0));
       background-color: blueviolet;
       border-radius: 5px;
       margin-top: 2vh;
@@ -122,7 +107,8 @@ main {
     font-weight: 500 !important;
     color: white;
     background-color: blueviolet;
-    margin-right: 1vh;
+    margin-right: 0;
+    margin-bottom: 6vh;
     padding: 8px 15px;
     border: none;
     cursor: pointer;
@@ -145,35 +131,11 @@ main {
     box-shadow: none;  
 }
 
-
-.butblanc {
-    color: blueviolet;
-    margin-right: 3vh;
-    font-family: "Inter";
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 800 !important;
-    background-color: rgb(255, 107, 0);
-    margin-right: 3vh;
-    padding: 6px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 20px; /* Coins arrondis */
-    box-shadow: none; 
-}
 #bloc {
     width: 100%;
     display: flex;
     flex-direction:column;
     align-items: center;
-}
-
-h5{
-    padding: 2vh;
-}
-
-h1{
-    text-align: center;
 }
 
 #blocresume {
@@ -182,83 +144,28 @@ h1{
     justify-content: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.purple-divider {
-    position: relative;
-    border: 0;
-    height: 2px; 
-    background-color: blueviolet; 
-    margin-left: 3vh;
-    margin-right: 3vh;
-    border-radius: 5px;
-}
-
-
-#propal {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    justify-content: space-between;
-    padding: 0;
-    margin: 0;
-}
-
-.movie-item {
-    flex: 0 0 calc(20% - 10px); /* Adjust this value to ensure 5 items per row, including margins */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 5px;
+li {
 }
 
 .movie-item2 {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
     list-style: none;
-    padding: 0;
-    margin: 0;
+    padding-left: 10vw;
+    padding-right: 10vw;
 }
 
-.movie-item2 li {
+/*.movie-item2 li {
     flex: 0 0 calc(33.33% - 10px); /* Adjust this value to ensure 3 items per row, including margins */
-    display: flex;
+   /* display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-}
+} */
 
 .poster {
     border: solid red;
     width: 242px;
     height: 161px;
-}
-
-.text-container {
-    width: 242px; /* Match the width of the .poster */
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 0;
-    margin: 0%;
 }
