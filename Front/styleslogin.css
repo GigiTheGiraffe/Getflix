@@ -106,6 +106,17 @@ main {
     margin: 0%;
 }
 
+.titres2 {
+    font-family: "Newsreader";
+    font-weight: 300;
+    font-size: 2.4rem;
+    color: white; 
+    margin-top: 4vh;
+    background: none;
+    text-align: center;
+
+}
+
 .texte {
     font-family: "Newsreader";
     font-weight: 200;
@@ -192,4 +203,19 @@ input {
 
 .signin {
     color: white;
+}
+
+#blocresume {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.movie-item2 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-left: 10vw;
+    padding-right: 10vw;
 }

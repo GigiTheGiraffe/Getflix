@@ -25,6 +25,7 @@ body {
     margin: 0;
     top: auto;
     padding: 0%;
+   
 }
 
 main {
@@ -43,6 +44,18 @@ main {
     background: none;
     color: white;
     text-decoration: none;
+}
+
+.navbar a {
+    background: none;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.navbar li:first-child {
+    margin-right: auto; /* Pousse les autres éléments vers la droite */
+    
 }
 
 
@@ -77,18 +90,17 @@ main {
 }
 .butblanc {
     color: blueviolet;
-    margin-right: 3vh;
     font-family: "Inter";
     color: white;
     font-size: 1rem;
     font-weight: 800 !important;
     background-color: rgb(255, 107, 0);
-    margin-right: 3vh;
     padding: 6px 20px;
     border: none;
     cursor: pointer;
     border-radius: 20px; /* Coins arrondis */
     box-shadow: none; 
+
 }
 
 .titres {
@@ -100,6 +112,17 @@ main {
     font-size: 4rem;
     color: white; 
     margin: 0%;
+}
+
+.titres2 {
+    font-family: "Newsreader";
+    font-weight: 300;
+    font-size: 2.4rem;
+    color: white; 
+    margin-top: 4vh;
+    background: none;
+    text-align: center;
+
 }
 
 .texte {
@@ -148,17 +171,17 @@ main {
 .border {
     border: solid blueviolet;
     border-radius: 10px;
-    display: flex;
-    
+    width: 45%;
 }
-
 
 
 #log1 {
     display: flex;
     justify-content: center;
+    align-content: center;
     border-radius: 10px;
     margin-top: 4vh;
+
 }
 
 form {
@@ -169,7 +192,7 @@ form {
     margin-top: 2vh;
     margin-bottom: 4vh;
     align-items: center;
-    width: 100%;
+    box-sizing: border-box;
     
 }
 
@@ -185,8 +208,24 @@ input {
     font-size: 16px; /* Ajuster la taille de la police */
     border: 1px solid blueviolet; /* Ajouter une bordure */
     border-radius: 5px; /* Ajouter des coins arrondis */
+    background-color: aliceblue;
 }
 
 .signin {
     color: white;
+}
+
+#blocresume {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.movie-item2 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-left: 10vw;
+    padding-right: 10vw;
 }
