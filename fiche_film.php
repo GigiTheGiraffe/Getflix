@@ -1,6 +1,6 @@
 <?php
 include 'get_movie.php';
-include 'get_comments_film';
+include 'get_comments_film.php';
 include 'submit_comment.php';
 ?>
 <!DOCTYPE html>
