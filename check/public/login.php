@@ -1,7 +1,7 @@
 <?php
 session_start();
-include("account_creation.php");
-include("account_connection.php");
+include("../scripts/account_creation.php");
+include("../scripts/account_connection.php");
 echo "Bienvenue, " . $_SESSION['user_name'];
 ?>
 <!DOCTYPE html>
@@ -9,7 +9,7 @@ echo "Bienvenue, " . $_SESSION['user_name'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styleslogin.css">
+    <link rel="stylesheet" href="css/styleslogin.css">
     <title>Tendances</title>
 </head>
 <body>
@@ -17,8 +17,8 @@ echo "Bienvenue, " . $_SESSION['user_name'];
     <ul class="navbar">
         <li><a href="default.asp"><img href="#"></a></li>
         <li class="butprofil"><a href="">My Profil</a></li>
-      </ul>    
-</header>    
+      </ul>
+</header>
     <main>
         <section id="log1">
             <article class="border">

@@ -1,5 +1,5 @@
 <?php
-include_once 'config.php';
+include_once '../config/config.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['message'])) {
     // Sanitize and remove <script> tags from the message
     $message = strip_tags($_POST['message'], '<b><i><u><strong><em><p><br>'); // Keep some formatting tags if needed
@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['message'])) {
 
     if (!empty($message)) {
         try {
-            $conn = new PDO("mysql:host=" . DB_SERVERNAME_LOCAL . ";dbname=" . DB_NAME_LOCAL , DB_USERNAME_LOCAL , DB_PASSWORD_LOCAL);
+            $conn = new PDO("mysql:host=" . DB_SERVERNAME . ";dbname=" . DB_NAME , DB_USERNAME , DB_PASSWORD);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Insert the comment into the database

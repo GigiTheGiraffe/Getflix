@@ -1,15 +1,12 @@
 <?php
+include_once '../config/config.php';
 if (isset($_POST["update"])) {
     $token = $_POST["token"];
     $new_password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
     // Connexion à la base de données
-    $servername = 'localhost';
-    $db_username = 'root';
-    $db_password = '';
-    $dbname = 'flouflix';
     try {
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $db_username, $db_password);
+        $conn = new PDO("mysql:host=" . DB_SERVERNAME . ";dbname=" . DB_NAME , DB_USERNAME , DB_PASSWORD);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Vérifier le token et son expiration
@@ -37,7 +34,7 @@ if (isset($_POST["update"])) {
             echo "Le lien de réinitialisation est invalide ou a expiré.";
         }
     } catch (PDOException $e) {
-        echo 'Erreur : ' . $e->getMessage();
+        //echo 'Erreur : ' . $e->getMessage();
     }
 }
 ?>

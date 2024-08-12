@@ -1,6 +1,5 @@
 <?php
-include_once 'config.php';
-$apiToken = MOVIEDB_TOKEN;
+include_once '../config/config.php';
 function getTrailerFicheFilm($response) {
     // Cree le debut de l'url
     $urlYoutube = 'https://www.youtube.com/watch?v=';
@@ -16,21 +15,21 @@ function getTrailerFicheFilm($response) {
 //  Sert à obtenir l'array de l'api dans laquelle chercher le trailer
 function getTrailerDataCurl(int $id)
 {
-    $apiToken = MOVIEDB_TOKEN;
 // Initialiser cURL
 $ch = curl_init();
 $apiUrl = "https://api.themoviedb.org/3/movie/$id/videos?language=en-US";
 curl_setopt($ch, CURLOPT_URL, $apiUrl);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    'Authorization: Bearer ' . $apiToken,
+    'Authorization: Bearer ' . MOVIEDB_TOKEN,
     'Accept: application/json',
 ]);
 
 $response = curl_exec($ch);
 
 if (curl_errno($ch)) {
-    echo 'Error:' . curl_error($ch);
+    //echo 'Error:' . curl_error($ch);
+    exit;
 } else {
     $data = json_decode($response, true);
 }

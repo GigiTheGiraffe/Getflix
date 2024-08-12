@@ -1,7 +1,7 @@
 <?php
 // tendances.php
-include('famous.php');
-include('user_session_check.php');
+include('../scripts/famous.php');
+include('../scripts/user_session_check.php');
 $movies = array_slice($data['results'], 1, 9);
 $firstMovie = $data['results'][0];
 ?>
@@ -10,7 +10,7 @@ $firstMovie = $data['results'][0];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="tendanceStyle.css">
+    <link rel="stylesheet" href="css/tendanceStyle.css">
     <title>Tendances</title>
 </head>
 <body>

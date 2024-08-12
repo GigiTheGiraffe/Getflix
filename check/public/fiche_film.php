@@ -1,8 +1,8 @@
 <?php
-include 'get_movie.php';
-include 'get_comments_film.php';
-include 'submit_comment.php';
-include 'user_session_check.php';
+include '../scripts/get_movie.php';
+include '../scripts/get_comments_film.php';
+include '../scripts/submit_comment.php';
+include '../scripts/user_session_check.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,7 @@ include 'user_session_check.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesfiche.css">
+    <link rel="css/stylesheet" href="stylesfiche.css">
     <title>FlouFix</title>
 </head>
 
@@ -76,8 +76,8 @@ include 'user_session_check.php';
             </article>
         </section>
     </main>
-    <script src="fiche_film.js"></script>
-    <script src="comment-validation.js"></script>
+    <script src="js/fiche_film.js"></script>
+    <script src="js/comment-validation.js"></script>
 </body>
 
 </html>

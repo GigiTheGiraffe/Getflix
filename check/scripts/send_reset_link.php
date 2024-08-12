@@ -3,17 +3,13 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php';
-
+include_once '../config/config.php';
 if (isset($_POST["reset"])) {
     $email = $_POST["email"];
 
-    // Connexion à la base de données
-    $servername = 'localhost';
-    $db_username = 'root';
-    $db_password = '';
-    $dbname = 'flouflix';
+    // Connexion à la base de données;
     try {
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $db_username, $db_password);
+        $conn = new PDO("mysql:host=" . DB_SERVERNAME . ";dbname=" . DB_NAME , DB_USERNAME , DB_PASSWORD);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Vérifier si l'email existe dans la base de données
@@ -73,13 +69,13 @@ if (isset($_POST["reset"])) {
                 <p>to reset your password!</p>
                 <p>See you in a little bit.</p>";
             } catch (Exception $e) {
-                echo "Une erreur est survenue lors de l'envoi de l'email : {$mail->ErrorInfo}";
+                //echo "Une erreur est survenue lors de l'envoi de l'email : {$mail->ErrorInfo}";
             }
         } else {
             echo "There is no existing account with this email address.";
         }
     } catch (PDOException $e) {
-        echo 'Erreur : ' . $e->getMessage();
+        //echo 'Erreur : ' . $e->getMessage();
     }
 }
 ?>

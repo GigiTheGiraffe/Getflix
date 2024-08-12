@@ -1,6 +1,6 @@
 <?php
 // Chargement du mdp et username
-include_once 'config.php';
+include_once '../config/config.php';
 /* Function pour avoir des films en aléatoire
 function getRandomnFilm()
 {
@@ -30,7 +30,7 @@ if ($sort) {
 }
 try {
     // Connexion à la base de données
-    $conn = new PDO("mysql:host=" . DB_SERVERNAME_LOCAL . ";dbname=" . DB_NAME_LOCAL , DB_USERNAME_LOCAL , DB_PASSWORD_LOCAL);
+    $conn = new PDO("mysql:host=" . DB_SERVERNAME . ";dbname=" . DB_NAME , DB_USERNAME , DB_PASSWORD);
     // Mettre le mode erreur pour savoir ce qui ne va pas
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -57,5 +57,5 @@ try {
     // Le echo sert a envoyer des données en format json avec json_encode
     echo json_encode($movies);
 } catch (PDOException $e) {
-    echo json_encode(['error' => $e->getMessage()]);
+    //echo json_encode(['error' => $e->getMessage()]);
 }

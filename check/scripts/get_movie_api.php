@@ -1,9 +1,8 @@
 <?php
 // Charger le jeton depuis le fichier token.php
-include_once 'config.php';
-$apiToken = MOVIEDB_TOKEN;
+include_once '../config/config.php';
 include 'get_trailer_fiche_film.php';
-function getMovieApi($id, $apiToken)
+function getMovieApi($id)
 {
     // Initialiser cURL
     $ch = curl_init();
@@ -11,14 +10,15 @@ function getMovieApi($id, $apiToken)
     curl_setopt($ch, CURLOPT_URL, $apiUrl);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, [
-        'Authorization: Bearer ' . $apiToken,
+        'Authorization: Bearer ' . MOVIEDB_TOKEN,
         'Accept: application/json',
     ]);
 
     $response = curl_exec($ch);
 
     if (curl_errno($ch)) {
-        echo 'Error:' . curl_error($ch);
+        //echo 'Error:' . curl_error($ch);
+        exit;
     } else {
         $data = json_decode($response, true);
     }

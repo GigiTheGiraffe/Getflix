@@ -1,5 +1,5 @@
 <?php
-include_once 'config.php';
+include_once '../config/config.php';
 // Charger le jeton depuis le fichier token.php
 $apiUrl = 'https://api.themoviedb.org/3/trending/movie/day?language=en-US';
 $apiToken = MOVIEDB_TOKEN;
@@ -17,7 +17,8 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, [
 $response = curl_exec($ch);
 
 if (curl_errno($ch)) {
-    echo 'Error:' . curl_error($ch);
+    //echo 'Error:' . curl_error($ch);
+    exit;
 } else {
     $data = json_decode($response, true);
 

@@ -1,19 +1,19 @@
 <?php
-include 'config.php';
-include 'get_comments.php';
-include 'get_users.php';
-include 'delete.php';
-include 'get_title_backoffice.php';
-include 'admin_session_check.php'
+include_once 'config/config.php';
+include '../scripts/get_comments.php';
+include '../scripts/get_users.php';
+include '../scripts/delete.php';
+include '../scripts/get_title_backoffice.php';
+include '../scripts/admin_session_check.php'
 ?>
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Backoffice Flouflix</title>
-    <link href="backoffice-style.css" rel="stylesheet">
+    <link href="css/backoffice-style.css" rel="stylesheet">
 </head>
 
 <body class="bg-secondary">
@@ -107,7 +107,7 @@ include 'admin_session_check.php'
                 </li>
             </ul>
     </main>
-    <script src="backoffice.js" crossorigin="anonymous"></script>
+    <script src="js/backoffice.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

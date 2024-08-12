@@ -1,10 +1,13 @@
+<?php
+include '../scripts/recommendation.php';
+?>
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlouFlix</title>
-    <link rel="stylesheet" href="styleshome.css">
+    <link rel="stylesheet" href="css/styleshome.css">
 </head>
 <body>
     <header>
@@ -31,16 +34,15 @@
         </section>
         <section id="partiproposition">
             <article>
-                <h1 class="titres2">Maintenant disponible sur FlouFlix</h1>
+                <h1 class="titres2"> Now available on FlouFlix</h1>
             </article>
             <article id="blocresume">
                 <ul class="movie-item2"> <!--image movie poster and over tittle movie-->
-                    <li><a><img class="poster"><h2 class="titres2"></h2></a></li>
-                    <li><a><img class="poster"><h2 class="titres2"></h2></a></li>
-                    <li><a><img class="poster"><h2 class="titres2"></h2></a></li>
-                    <li><a><img class="poster"><h2 class="titres2"></h2></a></li>
-                    <li><a><img class="poster"><h2 class="titres2"></h2></a></li>
-                    <li><a><img class="poster"><h2 class="titres2"></h2></a></li>  
+                    <?php foreach ($recommendations as $filmInfo) { ?>
+                        <li><a href="http://localhost/Getflix/check/fiche_film.php?id=<?= $filmInfo['id'] ?>&source=page.php"><img src="<?= $filmInfo['poster_path'] ?>" class="poster" alt="Poster of <?= $filmInfo['title'] ?>">
+                                <h2 class="titres2 overlay-title"><?= $filmInfo['title'] ?></h2>
+                            </a></li>
+                    <?php } ?>
                 </ul>
             </article>
         </section>

@@ -1,7 +1,7 @@
 <?php
-include_once 'config.php';
+include_once '../config/config.php';
 try {
-    $conn = new PDO("mysql:host=" . DB_SERVERNAME_LOCAL . ";dbname=" . DB_NAME_LOCAL , DB_USERNAME_LOCAL , DB_PASSWORD_LOCAL);
+    $conn = new PDO("mysql:host=" . DB_SERVERNAME . ";dbname=" . DB_NAME , DB_USERNAME , DB_PASSWORD);
     // Ajout des erreurs de PDO
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     // Préparation de la requête de fetch. Prends toutes les infos des commentaires existants
@@ -16,7 +16,7 @@ try {
     // Exécution de la requête
 } catch (PDOException $e) {
     // Debug message
-    echo "Connection failed: " . $e->getMessage();
+    //echo "Connection failed: " . $e->getMessage();
     exit;
 }
 // ferme connection

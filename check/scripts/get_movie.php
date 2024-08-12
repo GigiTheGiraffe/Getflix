@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include_once '../config/config.php';
 include 'get_movie_api.php';
 // recuperation et sanitazition de la source
 $source = isset($_GET['source']) ? $_GET['source'] : 'page.php';
@@ -14,7 +14,7 @@ if ($source == "tendance.php") {
     if (!isset($_GET['id']) || isset($movieInfo["status_code"])) {
         $rand = rand(1, 1004);
         try {
-            $conn = new PDO("mysql:host=" . DB_SERVERNAME_LOCAL . ";dbname=" . DB_NAME_LOCAL , DB_USERNAME_LOCAL , DB_PASSWORD_LOCAL);
+            $conn = new PDO("mysql:host=" . DB_SERVERNAME . ";dbname=" . DB_NAME , DB_USERNAME , DB_PASSWORD);
             // Ajout des erreurs de PDO
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             // Préparation de la requête de fetch
@@ -38,7 +38,7 @@ if ($source == "tendance.php") {
         $id = $_GET['id'];
         $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
         try {
-            $conn = new PDO("mysql:host=" . DB_SERVERNAME_LOCAL . ";dbname=" . DB_NAME_LOCAL , DB_USERNAME_LOCAL , DB_PASSWORD_LOCAL);
+            $conn = new PDO("mysql:host=" . DB_SERVERNAME . ";dbname=" . DB_NAME , DB_USERNAME , DB_PASSWORD);
             // Ajout des erreurs de PDO
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             // Préparation de la requête de fetch.
@@ -60,7 +60,7 @@ if ($source == "tendance.php") {
     if (!isset($_GET['id']) || empty($movieInfo)) {
         $rand = rand(1, 1004);
         try {
-            $conn = new PDO("mysql:host=" . DB_SERVERNAME_LOCAL . ";dbname=" . DB_NAME_LOCAL , DB_USERNAME_LOCAL , DB_PASSWORD_LOCAL);
+            $conn = new PDO("mysql:host=" . DB_SERVERNAME . ";dbname=" . DB_NAME , DB_USERNAME , DB_PASSWORD);
             // Ajout des erreurs de PDO
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             // Préparation de la requête de fetch
@@ -82,7 +82,7 @@ if ($source == "tendance.php") {
 }
 // Generation de l'array avec les films à recommander en fonction du genre du film afficher
 try {
-    $conn = new PDO("mysql:host=" . DB_SERVERNAME_LOCAL . ";dbname=" . DB_NAME_LOCAL , DB_USERNAME_LOCAL , DB_PASSWORD_LOCAL);
+    $conn = new PDO("mysql:host=" . DB_SERVERNAME . ";dbname=" . DB_NAME , DB_USERNAME , DB_PASSWORD);
     // Ajout des erreurs de PDO
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     // Préparation de la requête de fetch et on enleve la possibilite de recommander le meme film

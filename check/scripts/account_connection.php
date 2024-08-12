@@ -1,4 +1,5 @@
 <?php
+include_once '../config/config.php';
 if (isset($_POST["check"])) {
     $identifier = $_POST["identifier"];
     $password = $_POST["password"];
@@ -11,13 +12,8 @@ if (isset($_POST["check"])) {
         echo "<p>Le mot de passe ne peut contenir que des lettres majuscules/minuscules, des chiffres, des tirets ou des underscores.</p>";
     } else {
         try {
-            $servername = 'localhost';
-            $db_username = 'root';
-            $db_password = ''; // Mot de passe de la base de données
-            $dbname = 'flouflix';
-
             // On établit la connexion
-            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $db_username, $db_password);
+            $conn = new PDO("mysql:host=" . DB_SERVERNAME . ";dbname=" . DB_NAME , DB_USERNAME , DB_PASSWORD);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Préparer et exécuter la requête pour vérifier l'utilisateur et l'email
@@ -27,7 +23,7 @@ if (isset($_POST["check"])) {
             echo 'Requête exécutée avec succès.<br>';
             $result = $sth->fetch(PDO::FETCH_ASSOC);
             // Pour le débogage : Afficher la variable result
-            echo '<pre>' . print_r($result, true) . '</pre>';
+            //echo '<pre>' . print_r($result, true) . '</pre>';
 
             if ($result) {
                 echo 'Utilisateur trouvé.<br>';
@@ -45,7 +41,7 @@ if (isset($_POST["check"])) {
                 echo 'Utilisateur non trouvé.<br>';
             }
         } catch (PDOException $e) {
-            echo 'Impossible de traiter les données. Erreur : ' . $e->getMessage() . '<br>';
+            //echo 'Impossible de traiter les données. Erreur : ' . $e->getMessage() . '<br>';
         }
     }
 }
