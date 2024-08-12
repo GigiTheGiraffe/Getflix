@@ -1,11 +1,11 @@
 <?php
 // Chargement du mdp et username
-include_once 'load_env.php';
+include_once 'config.php';
 /* Function pour avoir des films en aléatoire
 function getRandomnFilm()
 {
     try {
-        $conn = new PDO("mysql:host=" . getenv('DB_SERVERNAME_LOCAL') . ";dbname=" . getenv('DB_NAME_LOCAL'), getenv('DB_USERNAME_LOCAL'), getenv('DB_PASSWORD_LOCAL'));
+        $conn = new PDO("mysql:host=" . DB_SERVERNAME_LOCAL . ";dbname=" . DB_NAME_LOCAL , DB_USERNAME_LOCAL , DB_PASSWORD_LOCAL);
         // Ajout des erreurs de PDO
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         // Préparation de la requête de fetch. Prends juste le titre, le premier genre et le lien vers le poster. Il en prend 20 de manière aléatoire.
@@ -30,7 +30,7 @@ if ($sort) {
 }
 try {
     // Connexion à la base de données
-    $conn = new PDO("mysql:host=" . getenv('DB_SERVERNAME_LOCAL') . ";dbname=" . getenv('DB_NAME_LOCAL'), getenv('DB_USERNAME_LOCAL'), getenv('DB_PASSWORD_LOCAL'));
+    $conn = new PDO("mysql:host=" . DB_SERVERNAME_LOCAL . ";dbname=" . DB_NAME_LOCAL , DB_USERNAME_LOCAL , DB_PASSWORD_LOCAL);
     // Mettre le mode erreur pour savoir ce qui ne va pas
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -57,5 +57,5 @@ try {
     // Le echo sert a envoyer des données en format json avec json_encode
     echo json_encode($movies);
 } catch (PDOException $e) {
-    echo json_encode(['error' => $e->getMessage()]);
+    //echo json_encode(['error' => $e->getMessage()]);
 }

@@ -2,11 +2,12 @@
 include 'switch_genre.php';
 include 'get_trailer_link.php';
 include 'get_cast_crew.php';
+include_once 'config.php';
 function insertIntoDb($responses) {
   $imageBaseUrl = 'https://image.tmdb.org/t/p/original';
   try {
     // Ouverture connexion
-    $conn = new PDO('mysql:host=' . $_ENV['DB_SERVERNAME_LOCAL'] . ';dbname=' . $_ENV['DB_NAME_LOCAL'], $_ENV['DB_USERNAME_LOCAL'], $_ENV['DB_PASSWORD_LOCAL']);
+    $conn = new PDO("mysql:host=" . DB_SERVERNAME_LOCAL . ";dbname=" . DB_NAME_LOCAL , DB_USERNAME_LOCAL , DB_PASSWORD_LOCAL);
     // Mettre le mode erreur
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

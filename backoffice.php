@@ -1,5 +1,5 @@
 <?php
-include 'load_env.php';
+include 'config.php';
 include 'get_comments.php';
 include 'get_users.php';
 include 'delete.php';

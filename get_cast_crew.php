@@ -1,6 +1,7 @@
 <?php
 // Minimum pour utiliser le call a l'api
 require_once('vendor/autoload.php');
+include_once('config.php');
 
 function getCastCrewData(int $movieId)
 {
@@ -9,7 +10,7 @@ function getCastCrewData(int $movieId)
     // Importer la data
     $response = $client->request('GET', "https://api.themoviedb.org/3/movie/$movieId/credits?language=en-US", [
       'headers' => [
-        'Authorization' => 'Bearer ' . $_ENV['MOVIEDB_TOKEN'],
+        'Authorization' => 'Bearer ' . MOVIEDB_TOKEN,
         'accept' => 'application/json',
       ],
     ]);

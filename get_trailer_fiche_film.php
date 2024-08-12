@@ -1,6 +1,6 @@
 <?php
-require_once 'load_env.php';
-$apiToken = getenv('MOVIEDB_TOKEN');
+include_once 'config.php';
+$apiToken = MOVIEDB_TOKEN;
 function getTrailerFicheFilm($response) {
     // Cree le debut de l'url
     $urlYoutube = 'https://www.youtube.com/watch?v=';
@@ -16,7 +16,7 @@ function getTrailerFicheFilm($response) {
 //  Sert à obtenir l'array de l'api dans laquelle chercher le trailer
 function getTrailerDataCurl(int $id)
 {
-    $apiToken = getenv('MOVIEDB_TOKEN');
+    $apiToken = MOVIEDB_TOKEN;
 // Initialiser cURL
 $ch = curl_init();
 $apiUrl = "https://api.themoviedb.org/3/movie/$id/videos?language=en-US";

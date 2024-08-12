@@ -1,6 +1,7 @@
 <?php
 // Minimum pour utiliser le call a l'api
 require_once('vendor/autoload.php');
+include_once('config.php');
 
 // Prends l'array obtenue par la fonction Trailer pour chercher le trailer
 function getTrailer($response) {
@@ -23,7 +24,7 @@ function getTrailerData(int $movieId)
     // Appel à l'api pour chercher les différents médias liés au film
     $response = $client->request('GET', "https://api.themoviedb.org/3/movie/$movieId/videos?language=en-US", [
         'headers' => [
-            'Authorization' => 'Bearer ' . $_ENV['MOVIEDB_TOKEN'],
+            'Authorization' => 'Bearer ' . MOVIEDB_TOKEN,
             'accept' => 'application/json',
         ],
     ]);

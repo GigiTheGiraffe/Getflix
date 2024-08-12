@@ -1,7 +1,7 @@
 <?php
-include_once 'load_env.php';
+include_once 'config.php';
 function getTitle($movieDbId) {
-    $apiToken = getenv('MOVIEDB_TOKEN');
+    $apiToken = MOVIEDB_TOKEN;
     // Initialiser cURL
     $ch = curl_init();
     $apiUrl = 'https://api.themoviedb.org/3/movie/' . $movieDbId . '?language=en-US';

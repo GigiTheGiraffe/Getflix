@@ -12,8 +12,13 @@ const moviesContainer = document.getElementById('propal');
 let displayedMovieTitle = new Set();
 // Est ce qu'il faut sort?
 let sort = null;
+let countError = 0;
 async function loadMovies() {
     if (loading) return;
+    if(countError !== 0) {
+        alert('Il y a une erreur avec le chargement. Veuiller réessayer plus tard. Nous nous excusons du dérangement.')
+        return; 
+    }
     loading = true;
     // Rajoute les donnees dans la methode POST, donc création du corps de la demande
     const params = new URLSearchParams();
@@ -72,6 +77,8 @@ async function loadMovies() {
         });
     } catch (error) {
         console.error('Error loading movies:', error);
+        countError++;
+        console.log(error);
     } finally {
         loading = false;
         checkAndLoadMoreMovies();

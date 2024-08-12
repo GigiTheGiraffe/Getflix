@@ -1,6 +1,7 @@
 <?php
 // Charger le jeton depuis le fichier token.php
-$apiToken = getenv('MOVIEDB_TOKEN');
+include_once 'config.php';
+$apiToken = MOVIEDB_TOKEN;
 include 'get_trailer_fiche_film.php';
 function getMovieApi($id, $apiToken)
 {

@@ -1,8 +1,8 @@
 <?php
-include_once 'load_env.php';
+include_once 'config.php';
 function addSubscriber($email) {
-    $apiKey = getenv('MAILCHIMP_API'); // Remplacez par votre clé API Mailchimp
-    $listId = getenv('MAILCHIMP_AUDIENCE'); // Remplacez par l'ID de votre liste Mailchimp
+    $apiKey = MAILCHIMP_API; // Remplacez par votre clé API Mailchimp
+    $listId = MAILCHIMP_AUDIENCE; // Remplacez par l'ID de votre liste Mailchimp
     $serverPrefix = substr($apiKey, strpos($apiKey, '-') + 1); // Récupérer le préfixe du serveur
 
     // URL de l'API Mailchimp pour ajouter un membre à la liste

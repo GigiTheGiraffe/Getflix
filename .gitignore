@@ -2,3 +2,4 @@ composer.json
 composer.phar
 .env
 composer.lock
+config.php
