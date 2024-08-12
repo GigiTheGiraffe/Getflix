@@ -16,7 +16,7 @@ if (isset($_POST['logout'])) {
     session_destroy();
 
     // Rediriger vers la page de connexion
-    header('Location: connexion-test.php');
+    header('Location: login.php');
     exit();
 }
 ?>

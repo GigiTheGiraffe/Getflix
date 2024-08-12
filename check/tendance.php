@@ -1,6 +1,7 @@
 <?php
 // tendances.php
 include('famous.php');
+include('user_session_check.php');
 $movies = array_slice($data['results'], 1, 9);
 $firstMovie = $data['results'][0];
 ?>

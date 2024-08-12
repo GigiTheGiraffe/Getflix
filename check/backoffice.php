@@ -4,6 +4,7 @@ include 'get_comments.php';
 include 'get_users.php';
 include 'delete.php';
 include 'get_title_backoffice.php';
+include 'admin_session_check.php'
 ?>
 <!doctype html>
 <html lang="fr">
@@ -93,6 +94,18 @@ include 'get_title_backoffice.php';
                 </table>
             </div>
         </section>
+        <ul class="nav-links">
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Séries</a></li>
+                <li><a href="#">Films</a></li>
+                <li><a href="#">Nouveautés</a></li>
+                <li><a href="#">Ma liste</a></li>
+                <li>
+                    <form method="POST" action="logout.php" name="logout">
+                        <button name="logout">Se déconnecter</button>
+                    </form>
+                </li>
+            </ul>
     </main>
     <script src="backoffice.js" crossorigin="anonymous"></script>
 </body>

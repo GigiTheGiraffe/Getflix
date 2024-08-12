@@ -2,6 +2,7 @@
 include 'get_movie.php';
 include 'get_comments_film.php';
 include 'submit_comment.php';
+include 'user_session_check.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +16,8 @@ include 'submit_comment.php';
 
 <body>
     <main>
-        <a href="<?= $source ?>">Go back</a> <!-- STYLISER GO BACKKKKKKKKKKKKKKKKKKKKK -->
+    <a href="movies.php">Go back</a>
+        <!--<a href="<?= $source ?>">Go back</a> <!-- STYLISER GO BACKKKKKKKKKKKKKKKKKKKKK -->
         <section id="part1">
             <article class="img_movie">
                 <div class="gradient-overlay"></div><!--note -->
