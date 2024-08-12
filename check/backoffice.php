@@ -27,11 +27,7 @@ include 'get_title_backoffice.php';
                 <a href="#users">
                     <h2>Users</h2>
                 </a>
-                <a href="#comments">
-                    <h2>Comments</h2>
-                </a>
-            </nav>
-            <div class="table-container switch" id="users">
+                <div class="table-container switch" id="users">
                 <table>
                     <thead>
                         <tr>
@@ -59,6 +55,11 @@ include 'get_title_backoffice.php';
                         ?>
                     </tbody>
                 </table>
+                <a href="#comments">
+                    <h2>Comments</h2>
+                </a>
+            </nav>
+            
             </div>
             <div class="table-container switch" id="comments">
                 <table>
