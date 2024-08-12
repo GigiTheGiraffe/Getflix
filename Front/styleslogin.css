@@ -43,6 +43,12 @@ main {
     background: none;
     color: white;
     text-decoration: none;
+    padding: 10px;
+}
+
+.navbar li:first-child {
+    margin-right: auto; /* Pousse les autres éléments vers la droite */
+    
 }
 
 .butprofil {
