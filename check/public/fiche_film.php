@@ -68,7 +68,7 @@ include '../scripts/user_session_check.php';
                 <h2 class="titres2">More like this</h2>
                 <ul id="propal">
                     <?php foreach ($recommendations as $filmInfo) { ?>
-                        <li><a href="http://localhost/Getflix/check/fiche_film.php?id=<?= $filmInfo['id'] ?>&source=page.php"><img src="<?= $filmInfo['poster_path'] ?>" class="poster" alt="Poster of <?= $filmInfo['title'] ?>">
+                        <li><a href="https://flouflix.free.nf/public/fiche_film.php?id=<?= $filmInfo['id'] ?>&source=page.php"><img src="<?= $filmInfo['poster_path'] ?>" class="poster" alt="Poster of <?= $filmInfo['title'] ?>">
                                 <h2 class="titres2 overlay-title"><?= $filmInfo['title'] ?></h2>
                             </a></li>
                     <?php } ?>
