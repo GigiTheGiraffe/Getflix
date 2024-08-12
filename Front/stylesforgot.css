@@ -25,6 +25,7 @@ body {
     margin: 0;
     top: auto;
     padding: 0%;
+   
 }
 
 main {
@@ -43,6 +44,12 @@ main {
     background: none;
     color: white;
     text-decoration: none;
+}
+
+.navbar a {
+    background: none;
+    color: white;
+    text-decoration: none;
     padding: 10px;
 }
 
@@ -50,6 +57,8 @@ main {
     margin-right: auto; /* Pousse les autres éléments vers la droite */
     
 }
+
+
 
 .butprofil {
     font-family: "Inter";
@@ -81,18 +90,17 @@ main {
 }
 .butblanc {
     color: blueviolet;
-    margin-right: 3vh;
     font-family: "Inter";
     color: white;
     font-size: 1rem;
     font-weight: 800 !important;
     background-color: rgb(255, 107, 0);
-    margin-right: 3vh;
     padding: 6px 20px;
     border: none;
     cursor: pointer;
     border-radius: 20px; /* Coins arrondis */
     box-shadow: none; 
+
 }
 
 .titres {
@@ -163,17 +171,17 @@ main {
 .border {
     border: solid blueviolet;
     border-radius: 10px;
-    display: flex;
-    justify-items: center;
+    width: 45%;
 }
-
 
 
 #log1 {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-content: center;
     border-radius: 10px;
     margin-top: 4vh;
+
 }
 
 form {
@@ -184,6 +192,7 @@ form {
     margin-top: 2vh;
     margin-bottom: 4vh;
     align-items: center;
+    box-sizing: border-box;
     
 }
 
@@ -199,6 +208,7 @@ input {
     font-size: 16px; /* Ajuster la taille de la police */
     border: 1px solid blueviolet; /* Ajouter une bordure */
     border-radius: 5px; /* Ajouter des coins arrondis */
+    background-color: aliceblue;
 }
 
 .signin {
