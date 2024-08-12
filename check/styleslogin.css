@@ -1,0 +1,197 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* font-family: "Inter"; */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
+/* font-family: "Newsreader"
+font-weight: 500; */
+
+/* violet
+color: 9003FF */
+
+* {
+    background-color: rgb(6, 6, 6);
+    color: white;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    color: #fff;
+}
+
+
+html {
+    height: auto;
+    margin: 0%;
+    padding: 0%;
+}
+body {
+    margin: 0;
+    top: auto;
+    padding: 0%;
+}
+
+main {
+    padding-left: 4vw;
+    padding-right: 4vw;
+}
+
+.navbar  {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+
+.navbar a {
+    background: none;
+    color: white;
+    text-decoration: none;
+}
+
+.butprofil {
+    font-family: "Inter";
+    font-size: 1rem;
+    font-weight: 500 !important;
+    color: white;
+    background-color: blueviolet;
+    margin-right: 4vw;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px; /* Coins arrondis */
+    box-shadow: none;  
+}
+
+.butviolet {
+    font-family: "Inter";
+    font-size: 1rem;
+    font-weight: 500 !important;
+    color: aliceblue;
+    background-color: blueviolet;
+    margin-right: 1vh;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px; /* Coins arrondis */
+    box-shadow: none; 
+    
+}
+.butblanc {
+    color: blueviolet;
+    margin-right: 3vh;
+    font-family: "Inter";
+    color: white;
+    font-size: 1rem;
+    font-weight: 800 !important;
+    background-color: rgb(255, 107, 0);
+    margin-right: 3vh;
+    padding: 6px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px; /* Coins arrondis */
+    box-shadow: none; 
+}
+
+.titres {
+   
+    background: none;
+    font-family: "Newsreader", light;
+    font-style: light;
+    font-weight: 300;
+    font-size: 4rem;
+    color: white; 
+    margin: 0%;
+}
+
+.texte {
+    font-family: "Newsreader";
+    font-weight: 200;
+    font-size: 1.3rem;
+    color: white; 
+    margin: 1vh 0 0;
+    text-align: center;
+}
+
+.texte2 {
+    font-family: "Newsreader";
+    font-weight: 100;
+    font-size: 0.8rem;
+    color: white; 
+    margin: 1vh 0 0;
+    text-align: center;
+}
+
+.purple-divider {
+    position: relative;
+    border: 0;
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(to right, blueviolet, rgb(255, 107, 0));
+    background-color: blueviolet;
+    border-radius: 5px;
+    margin-top: 2vh;
+    margin-bottom: 3vh;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.boxcheck {
+    display: flex;
+    justify-content: space-between;
+}
+
+.poster {
+    border: solid red;
+    width: 242px;
+    height: 161px;
+}
+
+.border {
+    border: solid blueviolet;
+    border-radius: 10px;
+    display: flex;
+    justify-items: center;
+}
+
+
+
+#log1 {
+    display: flex;
+    justify-content: space-around;
+    border-radius: 10px;
+    margin-top: 4vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Aligner les éléments en colonne */
+    margin-right: 3vw;
+    margin-left: 3vw;
+    margin-top: 2vh;
+    margin-bottom: 4vh;
+    align-items: center;
+    
+}
+
+label {
+    margin-bottom: 5px; /* Ajouter un peu d'espace en dessous des labels */
+    font-size: 14px;
+}
+
+
+input {
+    margin-bottom: 15px; /* Ajouter un peu d'espace en dessous des champs de saisie */
+    padding: 10px; /* Ajouter du padding */
+    font-size: 16px; /* Ajuster la taille de la police */
+    border: 1px solid blueviolet; /* Ajouter une bordure */
+    border-radius: 5px; /* Ajouter des coins arrondis */
+}
+
+.signin {
+    color: white;
+}
