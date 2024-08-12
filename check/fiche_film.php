@@ -52,7 +52,7 @@ include 'submit_comment.php';
             <article class="userCom">
                 <form id="commentForm" method="post">
                     <label for="message" class="comment">Give us your impression on this movie!</label>
-                    <textarea id="message" name="message" class="comment" rows="4" cols="50" placeholder="Write your comment here..." required></textarea>
+                    <textarea id="message" name="message" class="textarea" rows="4" cols="50" placeholder="Write your comment here..." required></textarea>
                     <button id="submit" class="butviolet" type="submit">Send</button>
                 </form>
             </article>
