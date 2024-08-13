@@ -2,7 +2,6 @@
 session_start();
 include("../scripts/account_creation.php");
 include("../scripts/account_connection.php");
-echo "Bienvenue, " . $_SESSION['user_name'];
 ?>
 <!DOCTYPE html>
 <html lang="en">

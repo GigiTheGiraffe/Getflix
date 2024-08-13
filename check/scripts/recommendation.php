@@ -1,13 +1,11 @@
 <?php
 include '../config/config.php';
 try {
-    $conn = new PDO("mysql:host=" . DB_SERVERNAME . ";dbname=" . DB_NAME , DB_USERNAME , DB_PASSWORD);
+    $conn = new PDO("mysql:host=" . DB_SERVERNAME_LOCAL . ";dbname=" . DB_NAME_LOCAL , DB_USERNAME_LOCAL , DB_PASSWORD_LOCAL);
     // Ajout des erreurs de PDO
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     // Préparation de la requête de fetch et on enleve la possibilite de recommander le meme film
-    $stmt = $conn->prepare("SELECT * FROM Movies WHERE (genre_1 = :genre OR genre_2 = :genre OR genre_3 = :genre) AND NOT (id = :id) ORDER BY RAND() LIMIT 7 ");
-    $stmt->bindParam(':genre', $movieInfo['genre_1']);
-    $stmt->bindParam(':id', $movieInfo['id'], PDO::PARAM_INT);
+    $stmt = $conn->prepare("SELECT title, id, poster_path FROM Movies ORDER BY RAND() LIMIT 5");
     // Set en mode fetch pour aller prendre les donnees
     $stmt->execute();
     $recommendations = $stmt->fetchAll(PDO::FETCH_ASSOC);

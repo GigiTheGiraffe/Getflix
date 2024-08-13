@@ -39,7 +39,7 @@ include '../scripts/recommendation.php';
             <article id="blocresume">
                 <ul class="movie-item2"> <!--image movie poster and over tittle movie-->
                     <?php foreach ($recommendations as $filmInfo) { ?>
-                        <li><a href="http://localhost/Getflix/check/fiche_film.php?id=<?= $filmInfo['id'] ?>&source=page.php"><img src="<?= $filmInfo['poster_path'] ?>" class="poster" alt="Poster of <?= $filmInfo['title'] ?>">
+                        <li><a href="https://flouflix.free.nf/public/fiche_film.php?id=<?= $filmInfo['id'] ?>&source=page.php"><img src="<?= $filmInfo['poster_path'] ?>" class="poster" alt="Poster of <?= $filmInfo['title'] ?>">
                                 <h2 class="titres2 overlay-title"><?= $filmInfo['title'] ?></h2>
                             </a></li>
                     <?php } ?>
