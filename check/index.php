@@ -1,5 +1,6 @@
 <?php
-include '../scripts/recommendation.php';
+include_once 'config/config.php';
+include 'scripts/recommendation.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,15 +8,16 @@ include '../scripts/recommendation.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlouFlix</title>
-    <link rel="stylesheet" href="css/styleshome.css">
+    <link rel="stylesheet" href="public/css/styleshome.css">
 </head>
 <body>
-    <header>
-        <ul class="navbar">
-            <li><a href="default.asp"><img href="#"></a></li>
-            <li class="butprofil"><a href="">My Profil</a></li>
-          </ul>
-    </header>
+<header>
+    <ul class="navbar">
+        <li><a href="default.asp"><img href="/login.html"></a></li>
+        <li><a href="public/movies.php">Movies</a></li>
+        <li><a href="public/tendance.php">Trend</a></li>
+      </ul>
+</header>
     <main>
         <hr class="purple-divider">
         <section id="partitexte">
@@ -28,7 +30,7 @@ include '../scripts/recommendation.php';
                     Getflix is your new gateway to a world of limitless entertainment. 
                     <br>Designed to cater to the needs of movie buffs and series enthusiasts, 
                     Getflix offers you an exceptional streaming experience, wherever you are and at any time.</h5>
-                <button class="butviolet">Regardez maintenant</button>
+                <a href="public/login.php"class="butviolet">Regardez maintenant</a>
             </article>
             <hr class="purple-divider">
         </section>

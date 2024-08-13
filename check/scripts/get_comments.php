@@ -1,5 +1,4 @@
 <?php
-include_once '../config/config.php';
 try {
     $conn = new PDO("mysql:host=" . DB_SERVERNAME . ";dbname=" . DB_NAME , DB_USERNAME , DB_PASSWORD);
     // Ajout des erreurs de PDO

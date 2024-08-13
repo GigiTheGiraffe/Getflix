@@ -10,10 +10,23 @@ $firstMovie = $data['results'][0];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="tendanceStyle.css">
+    <link rel="stylesheet" href="css/tendanceStyle.css">
     <title>Tendances</title>
 </head>
 <body>
+<header>
+    <ul class="navbar">
+        <li><a href="default.asp"><img href="../index.php"></a></li>
+        <li><a href="movies.php">Movies</a></li>
+        <li><a href="tendance.php">Trend</a></li>
+        <li class="butprofil"><a href="">My Profil</a></li>
+        <li>
+            <form method="POST" action="../scripts/logout.php" name="logout">
+                <button name="logout">Logout</button>
+            </form>
+        </li>
+      </ul>
+</header>
     <main>
         <section class="movie1">
             <article>

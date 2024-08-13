@@ -13,6 +13,17 @@ include("../scripts/user_session_check.php");
 </head>
 
 <body>
+    <ul class="navbar">
+        <li><a href="default.asp"><img href="../index.php"></a></li>
+        <li><a href="movies.php">Movies</a></li>
+        <li><a href="tendance.php">Trend</a></li>
+        <li class="butprofil"><a href="">My Profil</a></li>
+        <li>
+            <form method="POST" action="../scripts/logout.php" name="logout">
+                <button name="logout">Logout</button>
+            </form>
+        </li>
+      </ul>
     <main>
         <section id="movie1">
             <article id="infos">

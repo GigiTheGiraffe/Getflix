@@ -1,5 +1,5 @@
 <?php
-include_once 'config/config.php';
+include_once '../config/config.php';
 include '../scripts/get_comments.php';
 include '../scripts/get_users.php';
 include '../scripts/delete.php';
@@ -7,7 +7,7 @@ include '../scripts/get_title_backoffice.php';
 include '../scripts/admin_session_check.php'
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="utf-8">
@@ -28,7 +28,11 @@ include '../scripts/admin_session_check.php'
                 <a href="#users">
                     <h2>Users</h2>
                 </a>
-                <div class="table-container switch" id="users">
+                <a href="#comments">
+                    <h2>Comments</h2>
+                </a>
+            </nav>
+            <div class="table-container switch" id="users">
                 <table>
                     <thead>
                         <tr>
@@ -56,11 +60,6 @@ include '../scripts/admin_session_check.php'
                         ?>
                     </tbody>
                 </table>
-                <a href="#comments">
-                    <h2>Comments</h2>
-                </a>
-            </nav>
-            
             </div>
             <div class="table-container switch" id="comments">
                 <table>
@@ -94,15 +93,13 @@ include '../scripts/admin_session_check.php'
                 </table>
             </div>
         </section>
-        <ul class="nav-links">
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Séries</a></li>
-                <li><a href="#">Films</a></li>
-                <li><a href="#">Nouveautés</a></li>
-                <li><a href="#">Ma liste</a></li>
+        <ul>
+                <li><a href="../../index.php">Accueil</a></li>
+                <li><a href="tendance.php">Tendance</a></li>
+                <li><a href="movies.php">Films</a></li>
                 <li>
-                    <form method="POST" action="logout.php" name="logout">
-                        <button name="logout">Se déconnecter</button>
+                    <form method="POST" action="../scripts/logout.php" name="logout">
+                        <button name="logout">Logout</button>
                     </form>
                 </li>
             </ul>

@@ -8,7 +8,7 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     // Recuperation de l'id a delete
     $id = $_POST['deleteUser'];
-        $stmt = $conn->prepare("DELETE FROM Users WHERE id = :id");
+        $stmt = $conn->prepare("DELETE FROM users WHERE id = :id");
             // Liaison du parametre
         $stmt->bindParam(':id', $id);
         $stmt->execute();

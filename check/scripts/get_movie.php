@@ -9,12 +9,12 @@ if ($source == "tendance.php") {
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
         $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-        $movieInfo = getMovieApi($id, $apiToken);
+        $movieInfo = getMovieApi($id);
     }
     if (!isset($_GET['id']) || isset($movieInfo["status_code"])) {
         $rand = rand(1, 1004);
         try {
-            $conn = new PDO("mysql:host=" . DB_SERVERNAME . ";dbname=" . DB_NAME , DB_USERNAME , DB_PASSWORD);
+            $conn = new PDO("mysql:host=" . DB_SERVERNAME . ";dbname=" . DB_NAME . ";charset=utf8mb4", DB_USERNAME, DB_PASSWORD);
             // Ajout des erreurs de PDO
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             // Préparation de la requête de fetch
@@ -33,12 +33,12 @@ if ($source == "tendance.php") {
         }
     }
 } else {
-    $source = "page.php";
+    $source = "movies.php";
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
         $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
         try {
-            $conn = new PDO("mysql:host=" . DB_SERVERNAME . ";dbname=" . DB_NAME , DB_USERNAME , DB_PASSWORD);
+            $conn = new PDO("mysql:host=" . DB_SERVERNAME . ";dbname=" . DB_NAME . ";charset=utf8mb4", DB_USERNAME, DB_PASSWORD);
             // Ajout des erreurs de PDO
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             // Préparation de la requête de fetch.
@@ -60,13 +60,12 @@ if ($source == "tendance.php") {
     if (!isset($_GET['id']) || empty($movieInfo)) {
         $rand = rand(1, 1004);
         try {
-            $conn = new PDO("mysql:host=" . DB_SERVERNAME . ";dbname=" . DB_NAME , DB_USERNAME , DB_PASSWORD);
+            $conn = new PDO("mysql:host=" . DB_SERVERNAME . ";dbname=" . DB_NAME . ";charset=utf8mb4", DB_USERNAME, DB_PASSWORD);
             // Ajout des erreurs de PDO
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             // Préparation de la requête de fetch
             $stmt = $conn->prepare("SELECT * FROM Movies WHERE id = :id");
             $stmt->bindParam(':id', $rand);
-            echo "$rand";
             // Set en mode fetch pour aller prendre les donnees
             $stmt->execute();
             $movieInfo = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -82,7 +81,7 @@ if ($source == "tendance.php") {
 }
 // Generation de l'array avec les films à recommander en fonction du genre du film afficher
 try {
-    $conn = new PDO("mysql:host=" . DB_SERVERNAME . ";dbname=" . DB_NAME , DB_USERNAME , DB_PASSWORD);
+    $conn = new PDO("mysql:host=" . DB_SERVERNAME . ";dbname=" . DB_NAME . ";charset=utf8mb4", DB_USERNAME, DB_PASSWORD);
     // Ajout des erreurs de PDO
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     // Préparation de la requête de fetch et on enleve la possibilite de recommander le meme film

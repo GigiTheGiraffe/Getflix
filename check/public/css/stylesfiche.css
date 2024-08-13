@@ -351,3 +351,20 @@ ul li {
 .visible {
     display: block; /* Pour afficher l'élément */
 }
+
+.navbar  {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.navbar a {
+    background: none;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.navbar li:first-child {
+    margin-right: auto; /* Pousse les autres éléments vers la droite */
+}

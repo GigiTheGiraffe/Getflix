@@ -14,8 +14,10 @@ include("../scripts/account_connection.php");
 <body>
 <header>
     <ul class="navbar">
-        <li><a href="default.asp"><img href="#"></a></li>
-        <li class="butprofil"><a href="">My Profil</a></li>
+        <li><a href="default.asp"><img href="../index.php"></a></li>
+        <li><a href="login.php">Movies</a></li>
+        <li><a href="login.php">Trend</a></li>
+        <li class="butprofil"><a href="login.php">My Profil</a></li>
       </ul>
 </header>
     <main>

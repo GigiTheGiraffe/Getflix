@@ -17,6 +17,7 @@ async function loadMovies() {
     if (loading) return;
     if(countError !== 0) {
         alert('Il y a une erreur avec le chargement. Veuiller réessayer plus tard. Nous nous excusons du dérangement.')
+        window.removeEventListener('scroll', handleInfiniteScroll);
         return; 
     }
     loading = true;
@@ -34,7 +35,7 @@ async function loadMovies() {
     }
     try {
         // On recupere la reponse avec le php
-        const response = await fetch('show_movies.php', {
+        const response = await fetch('../../scripts/show_movies.php', {
             method: 'POST',
             body: params,
         });
@@ -49,7 +50,6 @@ async function loadMovies() {
 
         // Met à jour l'offset pour la prochaine requête
         offset += limit;
-        console.log(moviesData);
         // On va iterer dans chaque film renvoyé
         moviesData.forEach(film => {    
             // Vérifie si le nom du film a déjà été affiché
@@ -79,7 +79,6 @@ async function loadMovies() {
     } catch (error) {
         console.error('Error loading movies:', error);
         countError++;
-        console.log(error);
     } finally {
         loading = false;
         checkAndLoadMoreMovies();
@@ -104,6 +103,7 @@ function checkAndLoadMoreMovies() {
 // Si le genre change, on remet le offset a 0, on met la liste des films deja affichés a 0, on met la liste de film a 0 puis on charge 20 films
 function changeGenre() {
     currentGenre = document.getElementById('genre').value;
+    countError = 0;
     offset = 0;
     displayedMovieTitle.clear();
     moviesContainer.innerHTML = '';
@@ -117,6 +117,7 @@ document.getElementById('genre').addEventListener('change', changeGenre);
 // Si le genre change, on remet le offset a 0, on met la liste des films deja affichés a 0, on met la liste de film a 0 puis on charge 20 films
 function changeSort() {
     sort = document.getElementById('sort').value;
+    countError = 0;
     offset = 0;
     displayedMovieTitle.clear();
     moviesContainer.innerHTML = '';

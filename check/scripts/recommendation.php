@@ -1,7 +1,6 @@
 <?php
-include '../config/config.php';
 try {
-    $conn = new PDO("mysql:host=" . DB_SERVERNAME_LOCAL . ";dbname=" . DB_NAME_LOCAL , DB_USERNAME_LOCAL , DB_PASSWORD_LOCAL);
+    $conn = new PDO("mysql:host=" . DB_SERVERNAME . ";dbname=" . DB_NAME . ";charset=utf8mb4", DB_USERNAME, DB_PASSWORD);
     // Ajout des erreurs de PDO
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     // Préparation de la requête de fetch et on enleve la possibilite de recommander le meme film

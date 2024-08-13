@@ -1,4 +1,5 @@
 <?php
+include_once '../config/config.php';
 include '../scripts/get_movie.php';
 include '../scripts/get_comments_film.php';
 include '../scripts/submit_comment.php';
@@ -10,14 +11,26 @@ include '../scripts/user_session_check.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="css/stylesheet" href="stylesfiche.css">
+    <link rel="stylesheet" href="css/stylesfiche.css">
     <title>FlouFix</title>
 </head>
 
 <body>
+<header>
+    <ul class="navbar">
+        <li><a href="default.asp"><img href="../index.php"></a></li>
+        <li><a href="movies.php">Movies</a></li>
+        <li><a href="tendance.php">Trend</a></li>
+        <li class="butprofil"><a href="">My Profil</a></li>
+        <li>
+            <form method="POST" action="../scripts/logout.php" name="logout">
+                <button name="logout">Logout</button>
+            </form>
+        </li>
+      </ul>
+</header>
     <main>
-    <a href="movies.php">Go back</a>
-        <!--<a href="<?= $source ?>">Go back</a> <!-- STYLISER GO BACKKKKKKKKKKKKKKKKKKKKK -->
+        <a href="<?= $source ?>">Go back</a>
         <section id="part1">
             <article class="img_movie">
                 <div class="gradient-overlay"></div><!--note -->
@@ -54,7 +67,7 @@ include '../scripts/user_session_check.php';
             <article class="userCom">
                 <form id="commentForm" method="post">
                     <label for="message" class="comment">Give us your impression on this movie!</label>
-                    <textarea id="message" name="message" class="textarea" rows="4" cols="50" placeholder="Write your comment here..." required></textarea>
+                    <textarea id="message" name="message" class="textarea" rows="4" cols="50" placeholder="Write your comment here..." maxlength="500" required></textarea>
                     <button id="submit" class="butviolet" type="submit">Send</button>
                 </form>
             </article>

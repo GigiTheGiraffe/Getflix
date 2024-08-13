@@ -203,3 +203,20 @@ img.bdp {
     margin: 0%;
     padding-left: 3vh;
 }
+
+.navbar  {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.navbar a {
+    background: none;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.navbar li:first-child {
+    margin-right: auto; /* Pousse les autres éléments vers la droite */
+}
