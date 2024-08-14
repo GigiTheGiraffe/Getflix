@@ -26,7 +26,6 @@ include("user_session_check.php")
                     <h2 class="texte">Username</h2>
                     <hr class="purple-divider">
                     <?php
-session_start();
 echo "<p class='info_profil'>" . $_SESSION['user_name'] . "</p>";
 ?>
 <h2 class="texte">Email address</h2>
