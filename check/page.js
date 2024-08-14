@@ -5,7 +5,7 @@ const limit = 20;
 // Booleen pour savoir si loading est deja entrain de travailler
 let loading = false;
 // Genre du film 
-let currentGenre = document.getElementById('genre').value;
+let currentGenre = "all";
 // Endroit ou append les films
 const moviesContainer = document.getElementById('propal');
 // Ensemble pour garder trace des ID de films affichés
@@ -46,7 +46,6 @@ async function loadMovies() {
             window.removeEventListener('scroll', handleInfiniteScroll);
             return;
         }
-
         // Met à jour l'offset pour la prochaine requête
         offset += limit;
         // On va iterer dans chaque film renvoyé
@@ -57,19 +56,13 @@ async function loadMovies() {
                 const movieItem = document.createElement('li');
                 movieItem.className = 'movie-item';
                 // Ajoute juste le genre de la recherche à afficher
-                let genre
-                if (currentGenre !== "") {
-                    genre = currentGenre;
-                } else {
-                    genre = film.genre_1;
-                }
                 movieItem.innerHTML = `
                     <a href="fiche_film.php?id=` + film.id + `&source=page.php">
                         <img class="poster" loading="lazy" src="${film.poster_path}" alt="poster of ${film.title}">
                     </a>
                     <div class="text-container">
                         <h5 class="texte">${film.title}</h5>
-                        <h5 class="texte">${genre}</h5>
+                        <h5 class="texte">${film.genre_1}</h5>
                     </div>
                 `;
                 moviesContainer.appendChild(movieItem); // Ajoute l'élément à la liste
@@ -77,8 +70,8 @@ async function loadMovies() {
         });
     } catch (error) {
         console.error('Error loading movies:', error);
-        countError++;
         console.log(error);
+        countError++;
     } finally {
         loading = false;
         checkAndLoadMoreMovies();

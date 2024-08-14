@@ -29,7 +29,7 @@ include("user_session_check.php");
             <article id="lecture">
 <!-- Bouton de genre-->
                 <select class="butviolet" id="genre">
-                    <option value="" selected="selected">All</option>
+                    <option value="all" selected="selected">All</option>
                     <option value="action">Action</option>
                     <option value="adventure">Adventure</option>
                     <option value="animation">Animation</option>
