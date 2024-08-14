@@ -15,9 +15,9 @@ include("user_session_check.php");
         <li><a class="but" href="login.html">Movies</a></li>
         <li><a class="but" href="login.html">Trend</a></li>
         <li class="butprofil"><a href="">My Profil</a></li>
-        <li class="butdeco"><a href="">Déconnexion</a></li>          
-      </ul>    
-</header>  
+        <li class="butdeco"><a href="">Déconnexion</a></li>
+      </ul>
+</header>
 <body>
     <main>
         <div class="container">
