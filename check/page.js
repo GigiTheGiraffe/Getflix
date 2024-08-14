@@ -13,8 +13,10 @@ let displayedMovieTitle = new Set();
 // Est ce qu'il faut sort?
 let sort = null;
 let countError = 0;
+let end = false;
 async function loadMovies() {
-    if (loading) return;
+    console.log(end);
+    if (loading || end) return;
     if(countError !== 0) {
         alert('Il y a une erreur avec le chargement. Veuiller réessayer plus tard. Nous nous excusons du dérangement.')
         return; 
@@ -44,6 +46,7 @@ async function loadMovies() {
          if (moviesData.length === 0) {
             // Désactiver l'écouteur d'événements de défilement
             window.removeEventListener('scroll', handleInfiniteScroll);
+            end = true;
             return;
         }
         // Met à jour l'offset pour la prochaine requête
@@ -55,7 +58,6 @@ async function loadMovies() {
                 displayedMovieTitle.add(film.title); // Ajoute le nom du film à l'ensemble
                 const movieItem = document.createElement('li');
                 movieItem.className = 'movie-item';
-                // Ajoute juste le genre de la recherche à afficher
                 movieItem.innerHTML = `
                     <a href="fiche_film.php?id=` + film.id + `&source=page.php">
                         <img class="poster" loading="lazy" src="${film.poster_path}" alt="poster of ${film.title}">
@@ -68,13 +70,13 @@ async function loadMovies() {
                 moviesContainer.appendChild(movieItem); // Ajoute l'élément à la liste
             }
         });
+        checkAndLoadMoreMovies();
     } catch (error) {
         console.error('Error loading movies:', error);
         console.log(error);
         countError++;
     } finally {
         loading = false;
-        checkAndLoadMoreMovies();
     }
 }
 
@@ -95,6 +97,7 @@ function checkAndLoadMoreMovies() {
 }
 // Si le genre change, on remet le offset a 0, on met la liste des films deja affichés a 0, on met la liste de film a 0 puis on charge 20 films
 function changeGenre() {
+    end = false;
     currentGenre = document.getElementById('genre').value;
     offset = 0;
     displayedMovieTitle.clear();
@@ -108,6 +111,7 @@ function changeGenre() {
 document.getElementById('genre').addEventListener('change', changeGenre);
 // Si le genre change, on remet le offset a 0, on met la liste des films deja affichés a 0, on met la liste de film a 0 puis on charge 20 films
 function changeSort() {
+    end = false;
     sort = document.getElementById('sort').value;
     offset = 0;
     displayedMovieTitle.clear();
