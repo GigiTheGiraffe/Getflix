@@ -15,8 +15,11 @@ echo "Bienvenue, " . $_SESSION['user_name'];
 <body>
 <header>
     <ul class="navbar">
-        <li><a href="default.asp"><img href="#"></a></li>
+        <li><a href="default.asp"><img href="login.html"></a></li>
+        <li><a href="login.html">Movies</a></li>
+        <li><a href="login.html">Trend</a></li>
         <li class="butprofil"><a href="">My Profil</a></li>
+        <li class="butblanc"><a href="">Déconnexion</a></li>          
       </ul>    
 </header>    
     <main>
@@ -30,11 +33,14 @@ echo "Bienvenue, " . $_SESSION['user_name'];
                             <input type="text" id="identifier" name="identifier" required>
                         </div>
                         <div>
-                            <label for="password"><p class="texte">Password :</p></label>
+                            <label for="password"><p class="texte">Password :</p> :</label>
                             <input type="password" id="password" name="password" required>
                         </div>
                         <div>
                             <button class="butblanc" type="submit" name="check">Log in</button>
+                        </div>
+                        <div>
+                            <a href="forgot_password.html" class="texte">Forgot password</a>
                         </div>
                 </form>
             </article>
@@ -68,9 +74,21 @@ echo "Bienvenue, " . $_SESSION['user_name'];
                 </form>
             </article>
         </section>
-        <section>
-
-        
+        <hr class="purple-divider">
+        <section id="partiproposition">
+            <article>
+                <h1 class="titres2">Maintenant disponible sur FlouFlix</h1>
+            </article>
+            <article id="blocresume">
+                <ul class="movie-item2"> <!--image movie poster and over tittle movie-->
+                    <li><a><img class="poster"><h2 class="titres2"></h2></a></li>
+                    <li><a><img class="poster"><h2 class="titres2"></h2></a></li>
+                    <li><a><img class="poster"><h2 class="titres2"></h2></a></li>
+                    <li><a><img class="poster"><h2 class="titres2"></h2></a></li>
+                    <li><a><img class="poster"><h2 class="titres2"></h2></a></li>
+                    <li><a><img class="poster"><h2 class="titres2"></h2></a></li>  
+                </ul>
+            </article>
         </section>
     </main>
 </body>

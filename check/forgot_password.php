@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -5,25 +6,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forgot password</title>
+    <link rel="stylesheet" href="stylesforgot.css">
 </head>
-
+<header>
+    <ul class="navbar">
+        <li><a href="login.html"><img src="FlouFlixLogo.png"></a></li>
+        <li><a class="but" href="login.html">Movies</a></li>
+        <li><a class="but" href="login.html">Trend</a></li>
+        <li class="butprofil"><a href="">My Profil</a></li>
+        <li class="butdeco"><a href="">Déconnexion</a></li>          
+      </ul>    
+</header>  
 <body>
     <main>
-        <section class="">
-            <article class="reset" style="border: 1px solid #000; padding: 20px; width: 300px; margin: 0 auto;">
+        <section id="log1">
+            <article class="border">
                 <form action="send_reset_link.php" method="POST">
-                    <h2>Reset Password</h2>
-                    <label for="email">Email of your Flouflix account:</label>
+                    <h2 class="texte">Reset Password</h2>
+                    <hr class="purple-divider">
+                    <label for="email"><p class="texte">Email of your Flouflix account :</p></label>
                     <input type="email" name="email" id="email" required>
-                    <button type="submit" name="reset">Send me a new link!</button>
+                    <button class="butblanc" type="submit" name="reset">Send me a new link !</button>
                 </form>
-
             </article>
         </section>
-        <section>
-
-            <!-- yaura une autre propal de movie -->
-        </section>
+        <hr class="purple-divider">
+    </main>
 </body>
 
 </html>
