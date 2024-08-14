@@ -1,7 +1,5 @@
 
 
-
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /* font-family: "Inter"; */
@@ -170,21 +168,4 @@ li {
     border: solid red;
     width: 242px;
     height: 161px;
-}
-
-.navbar  {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-}
-
-.navbar a {
-    background: none;
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-}
-
-.navbar li:first-child {
-    margin-right: auto; /* Pousse les autres éléments vers la droite */
 }
