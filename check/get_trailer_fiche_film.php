@@ -1,5 +1,5 @@
 <?php
-include_once 'config.php';
+include_once 'config/config.php';
 $apiToken = MOVIEDB_TOKEN;
 function getTrailerFicheFilm($response) {
     // Cree le debut de l'url

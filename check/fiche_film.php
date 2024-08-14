@@ -3,6 +3,7 @@ include 'get_movie.php';
 include 'get_comments_film.php';
 include 'submit_comment.php';
 include 'user_session_check.php';
+include_once 'config/config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

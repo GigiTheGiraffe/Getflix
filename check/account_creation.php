@@ -1,4 +1,5 @@
 <?php
+include_once 'config/config.php';
 if (isset($_POST["subscribe"])) {
     $user = $_POST["user"];
     $email = $_POST["email"];
@@ -20,13 +21,8 @@ if (isset($_POST["subscribe"])) {
     } else {
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         try {
-            $servername = 'localhost';
-            $username = 'root';
-            $dbpassword = '';
-            $dbname = 'flouflix';
-
             // On établit la connexion
-            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $dbpassword);
+            $conn = new PDO("mysql:host=" . DB_SERVERNAME_LOCAL . ";dbname=" . DB_NAME_LOCAL , DB_USERNAME_LOCAL , DB_PASSWORD_LOCAL);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $sth = $conn->prepare("SELECT * FROM users WHERE user = :user OR email = :email");

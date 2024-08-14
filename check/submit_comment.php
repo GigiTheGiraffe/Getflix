@@ -1,5 +1,5 @@
 <?php
-include_once 'config.php';
+include_once 'config/config.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['message'])) {
     // Sanitize and remove <script> tags from the message
     $message = strip_tags($_POST['message'], '<b><i><u><strong><em><p><br>'); // Keep some formatting tags if needed

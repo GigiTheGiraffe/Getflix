@@ -1,5 +1,5 @@
 <?php
-include("user_session_check.php"); 
+include("user_session_check.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">

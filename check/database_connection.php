@@ -1,11 +1,7 @@
 <?php
-$servername = 'localhost';
-$db_username = 'root';
-$db_password = '';
-$dbname = 'flouflix';
-
+include_once 'config/config.php';
 try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $db_username, $db_password);
+    $conn = new PDO("mysql:host=" . DB_SERVERNAME_LOCAL . ";dbname=" . DB_NAME_LOCAL , DB_USERNAME_LOCAL , DB_PASSWORD_LOCAL);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     echo 'Connexion échouée : ' . $e->getMessage();

@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include_once 'config/config.php';
 include 'get_movie_api.php';
 // recuperation et sanitazition de la source
 $source = isset($_GET['source']) ? $_GET['source'] : 'page.php';

@@ -1,6 +1,6 @@
 <?php
 // Chargement du mdp et username
-include_once 'config.php';
+include_once 'config/config.php';
 /* Function pour avoir des films en aléatoire
 function getRandomnFilm()
 {

@@ -1,5 +1,5 @@
 <?php
-include_once 'config.php';
+include_once 'config/config.php';
 // Charger le jeton depuis le fichier token.php
 $apiUrl = 'https://api.themoviedb.org/3/trending/movie/day?language=en-US';
 $apiToken = MOVIEDB_TOKEN;

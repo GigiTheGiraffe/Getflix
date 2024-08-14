@@ -1,5 +1,5 @@
 <?php
-include_once 'config.php';
+include_once 'config/config.php';
 // Suppression user
 if (isset($_POST['deleteUser']))  {
 try {

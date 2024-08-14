@@ -3,17 +3,14 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php';
+include_once 'config/config.php';
 
 if (isset($_POST["reset"])) {
     $email = $_POST["email"];
 
     // Connexion à la base de données
-    $servername = 'localhost';
-    $db_username = 'root';
-    $db_password = '';
-    $dbname = 'flouflix';
     try {
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $db_username, $db_password);
+        $conn = new PDO("mysql:host=" . DB_SERVERNAME_LOCAL . ";dbname=" . DB_NAME_LOCAL , DB_USERNAME_LOCAL , DB_PASSWORD_LOCAL);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Vérifier si l'email existe dans la base de données

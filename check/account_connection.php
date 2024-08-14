@@ -1,4 +1,5 @@
 <?php
+include_once 'config/config.php';
 if (isset($_POST["check"])) {
     $identifier = $_POST["identifier"];
     $password = $_POST["password"];
@@ -11,13 +12,9 @@ if (isset($_POST["check"])) {
         echo "<p>Le mot de passe ne peut contenir que des lettres majuscules/minuscules, des chiffres, des tirets ou des underscores.</p>";
     } else {
         try {
-            $servername = 'localhost';
-            $db_username = 'root';
-            $db_password = ''; // Mot de passe de la base de données
-            $dbname = 'flouflix';
 
             // On établit la connexion
-            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $db_username, $db_password);
+            $conn = new PDO("mysql:host=" . DB_SERVERNAME_LOCAL . ";dbname=" . DB_NAME_LOCAL , DB_USERNAME_LOCAL , DB_PASSWORD_LOCAL);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Préparer et exécuter la requête pour vérifier l'utilisateur et l'email

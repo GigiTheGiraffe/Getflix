@@ -1,5 +1,5 @@
 <?php
-include_once 'config.php';
+include_once 'config/config.php';
 function getTitle($movieDbId) {
     $apiToken = MOVIEDB_TOKEN;
     // Initialiser cURL

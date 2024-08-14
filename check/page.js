@@ -49,9 +49,8 @@ async function loadMovies() {
 
         // Met à jour l'offset pour la prochaine requête
         offset += limit;
-        console.log(moviesData);
         // On va iterer dans chaque film renvoyé
-        moviesData.forEach(film => {    
+        moviesData.forEach(film => {
             // Vérifie si le nom du film a déjà été affiché
             if (!displayedMovieTitle.has(film.title)) {
                 displayedMovieTitle.add(film.title); // Ajoute le nom du film à l'ensemble
@@ -59,7 +58,7 @@ async function loadMovies() {
                 movieItem.className = 'movie-item';
                 // Ajoute juste le genre de la recherche à afficher
                 let genre
-                if (currentGenre!== null) {
+                if (currentGenre !== "") {
                     genre = currentGenre;
                 } else {
                     genre = film.genre_1;
