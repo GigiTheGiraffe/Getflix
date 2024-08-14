@@ -25,9 +25,42 @@ function getRandomnFilm()
     return $resultMessage;
 }
 */
+// Array avec les genres pour vérifier si il existe bien
+$genres = [
+    'action',
+    'adventure',
+    'animation',
+    'comedy',
+    'crime',
+    'documentary',
+    'drama',
+    'family',
+    'fantasy',
+    'history',
+    'horror',
+    'music',
+    'mystery',
+    'romance',
+    'science fiction',
+    'tv movie',
+    'thriller',
+    'war',
+    'western'
+];
+// Array avec les genres pour vérifier si il existe bien
+$sorts = [
+    'asc',
+    'desc',
+];
 $offset = isset($_POST['offset']) ? (int)$_POST['offset'] : 0;
 $genre = isset($_POST['genre']) ? $_POST['genre'] : null; // Récupérer le genre à partir des paramètres POST
+if (!in_array($genre, $genres)) {
+    $genre = null;
+}
 $sort = isset($_POST['sort']) ? $_POST['sort'] : null; // Récupérer la valeur de sort à partir des paramètres POST
+if (!in_array($sort, $sorts)) {
+    $sort = null;
+}
 if ($sort) {
     $sort = strtoupper($sort);
 }
@@ -39,12 +72,12 @@ $conn = new PDO("mysql:host=" . DB_SERVERNAME . ";dbname=" . DB_NAME . ";charset
 
     // Préparer la requête en fonction de la présence du genre
     if ($genre && !$sort) {
-        $stmt = $conn->prepare("SELECT poster_path, title, id FROM Movies  WHERE genre_1 = :genre OR genre_2 = :genre OR genre_3 = :genre ORDER BY id LIMIT 20 OFFSET :offset");
+        $stmt = $conn->prepare("SELECT poster_path, title, genre_1, id FROM Movies  WHERE genre_1 = :genre OR genre_2 = :genre OR genre_3 = :genre ORDER BY id LIMIT 20 OFFSET :offset");
         $stmt->bindParam(':genre', $genre, PDO::PARAM_STR);
     } elseif ($sort && !$genre) {
         $stmt = $conn->prepare("SELECT poster_path, title, genre_1, release_date, id FROM Movies ORDER BY release_date $sort LIMIT 20 OFFSET :offset");
     } elseif ($sort && $genre) {
-        $stmt = $conn->prepare("SELECT poster_path, title, id FROM Movies WHERE genre_1 = :genre OR genre_2 = :genre OR genre_3 = :genre ORDER BY release_date $sort LIMIT 20 OFFSET :offset");
+        $stmt = $conn->prepare("SELECT poster_path, title, id, genre_1 FROM Movies WHERE genre_1 = :genre OR genre_2 = :genre OR genre_3 = :genre ORDER BY release_date $sort LIMIT 20 OFFSET :offset");
         $stmt->bindParam(':genre', $genre, PDO::PARAM_STR);
     } else {
         $stmt = $conn->prepare("SELECT poster_path, title, genre_1, id FROM Movies ORDER BY id LIMIT 20 OFFSET :offset");

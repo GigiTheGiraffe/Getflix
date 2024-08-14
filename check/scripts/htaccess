@@ -1,0 +1,8 @@
+<Files *.php>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files show_movies.php>
+    Order Deny,Allow
+    Allow from all
+</Files>
