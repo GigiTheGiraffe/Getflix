@@ -35,6 +35,7 @@ if (isset($_POST["check"])) {
                     session_start();
                     $_SESSION['user_id'] = $result['id'];
                     $_SESSION['user_name'] = $result['user'];
+                    $_SESSION['user_email'] = $result['email'];
                     $_SESSION['role'] = $result['role'];
                     header("Location: tendance.php");
                     exit();
