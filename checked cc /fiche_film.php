@@ -36,7 +36,7 @@ include_once 'config/config.php';
         </section>
         <hr class="purple-divider">
         <section id="part4" class="hidden">
-            <iframe width="100%" height="700px" src="https://www.youtube.com/embed/<?= explode('=', $movieInfo['trailer_link'])[1] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe class="frame" width="100%" height="700px" src="https://www.youtube.com/embed/<?= explode('=', $movieInfo['trailer_link'])[1] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </section>
         <section id="part3" class="hidden">
             <article class="otherCom">

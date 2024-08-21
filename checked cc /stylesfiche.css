@@ -195,6 +195,9 @@ body {
 #part4 {
     margin: 4vh 4vw;
 }
+.frame{
+    border-radius: 30px;
+}
 
 /* le bloc commentaires */
 #part3 {
