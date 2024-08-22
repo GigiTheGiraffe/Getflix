@@ -1,0 +1,402 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
+
+* {
+    background-color: rgb(6, 6, 6);
+}
+  
+html {
+    height: auto;
+    margin: 0%;
+    padding: 0%;
+}
+body {
+    margin: 0;
+    top: auto;
+    padding: 0%;
+}
+  
+.goback {
+    position: fixed; 
+    top: 17vh; 
+    left: 10px; 
+    z-index: 10000; 
+    background-color: transparent; 
+    padding: 5px 10px; 
+    text-decoration: none; 
+    background: linear-gradient(to right, blueviolet, rgb(255, 107, 0)); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    color: blueviolet;    
+    font-family: "Inter", sans-serif;
+    font-size: 2.3rem;
+}
+
+#part1 {
+    position: relative;  
+    width: 100%;   
+    border: none;
+    overflow: hidden;    
+}
+
+.backdrop {
+    width: 100%;
+    height: 60vh;            
+    display: block;
+    overflow: hidden;
+    object-fit: cover;     
+}
+
+.gradient-overlay {
+    position: absolute;
+    bottom: 0;           
+    left: 0;             
+    width: 100%;         
+    height: 100%;         
+    background: linear-gradient(to bottom,black, transparent,transparent, black);
+    z-index: 1;          
+}
+
+/* ---- infos  */
+
+#info{
+    top: -4px;
+    border: none;
+    padding-left: 4vw;
+    margin-right: 4vw;
+    position: relative;
+    z-index: 1;
+    background-color: rgb(6, 6, 6);
+    display: flex;
+    justify-content: space-between;    
+}
+
+.info_film {
+    display: flex;
+    align-items: baseline;
+}
+.titres {
+    background: none;
+    font-family: "Newsreader", light;
+    font-style: light;
+    font-weight: 300;
+    font-size: 4rem;
+    color: white; 
+    margin: 0%;
+}
+.titreside {
+    background: none;
+    font-family: "Inter";
+    font-weight: 300;
+    font-size: 1.1rem;
+    color: white; 
+    margin: 0%;
+    padding-left: 4vh;
+}
+/* fin infos  */
+ /* lecture les deux boutons  */
+#lecture{ 
+    display: flex;
+    align-items: center;
+    background: none;
+    gap: 1vw;
+}
+
+.butblanc {
+    font-family: "Inter";
+    font-size: 1rem;
+    font-weight: 500 !important;
+    color: white;
+    background: linear-gradient(to right, blueviolet, rgb(255, 107, 0));
+    padding: 6px 20px;
+    border: none; 
+    appearance: none;
+    border-radius: 20px; 
+    text-align: center;
+    margin: 0%;
+    cursor: pointer;
+}
+
+.butviolet {
+    font-family: "Inter";
+    font-size: 1rem;
+    font-weight: 500 !important;
+    color: white;
+    background-color: blueviolet !important;
+    padding: 6px 20px;
+    border: none; 
+    appearance: none;
+    border-radius: 20px; 
+    text-align: center;
+    margin: 0%;
+    cursor: pointer;
+}
+/* fin letcture et fin section info */
+@media (max-width: 768px) {
+    #info {
+        margin-right: 0;
+        display: flex;
+       flex-direction: column;
+    }
+
+    .info_film {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2vw;
+    }
+
+    #lecture {
+        display: flex;
+        width: 100%;
+        margin-right: 0;
+        justify-content: center;
+        gap: 2vw;
+    }
+
+    .titreside {
+        display: NONE;
+    }
+}
+
+.purple-divider {
+    width: auto;
+    position: relative;
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to right, blueviolet, rgb(255, 107, 0));
+    border-radius: 5px;
+    margin-top: 2vh !important;
+    margin-bottom: 2vh;
+    margin-left: 4vw;
+    margin-right: 4vw;
+}
+/* descriptioon film  */
+#resume{
+    padding: 4vw;
+}
+.genres {
+    font-family: "Newsreader";
+    font-weight: 300;
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 2vh; 
+    margin-top: 0;
+
+}
+.overview {
+    font-family: "Inter";
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: white; 
+    text-align: left;
+}
+/* video */
+#part4 {
+    margin: 4vh 4vw;
+}
+.frame{
+    border-radius: 30px;
+}
+
+/* le bloc commentaires */
+#part3 {
+    margin: 4vh 4vw;
+}
+/* Box avec la liste des com */
+.otherCom {
+    display: flex;
+    flex: wrap;
+    width: 100%;
+}
+/* ul */
+.listCom {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 4vh;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    gap: 10px;
+    flex-wrap: wrap; 
+}
+
+.listCom li {
+    width: 30%; 
+    border: 2.5px solid blueviolet;
+    padding: 2vh;
+    border-radius: 30px;
+    box-sizing: border-box; 
+}
+.text-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+/* le nom et la date */
+.texte {
+    font-size: large;
+    color: white !important;
+}
+
+/* le commentaire */
+.com {
+    margin-top: 0;
+    font-family: 'Inter' !important;
+    font-size: 0.9rem;
+    color: white !important;
+}
+/* responsive des com */
+@media (max-width: 768px) { 
+    .listCom {
+        flex-direction: column;  
+    }
+
+    .listCom li {
+        width: 90%;  
+        margin-bottom: 10px;
+    }
+}
+
+/* ----- la box du form commentaire  */
+.userCom {
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    position: relative; 
+}
+
+.textarea {
+    padding: 4vw 4vh;
+    width: 85%;
+    opacity: 90%;
+    border: 2.5px solid blueviolet;
+    border-radius: 30px;
+    height: 20vh;
+    margin-bottom: 2vh; 
+    color: white;
+}
+
+.textarea::placeholder {
+    font-size: 1.5rem;
+    font-weight: 200;
+    font-style: italic;
+    font-family: 'Newsreader';
+    text-align: center;
+    color: white;
+    width: 100%;
+}     
+
+/* boxe pour movies  */
+.titres2{
+    background: none;
+    font-family: "Newsreader", light;
+    font-style: light;
+    font-weight: 300;
+    font-size: 3rem;
+    color: white; 
+    margin: 0 4vw;
+}
+#propal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    margin: 4vw;
+    list-style: none;
+}
+
+#propal li {
+    flex: 0 1 calc(20% - 10px);
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+#propal img.poster {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: fill;
+    flex-shrink: 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+#propal li:hover img.poster {
+    transform: scale(1.2); 
+}
+
+#propal li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1;
+}
+
+#propal li:hover::before {
+    opacity: 1; 
+}
+
+.overlay-title {
+    margin: 0 !important;
+    font-size: 2.7vh !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none; 
+    color: white;
+    text-shadow: 4px 4px 6px black; 
+    text-align: center; 
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 2;
+}
+
+#propal li:hover .overlay-title {
+    opacity: 1; 
+}
+
+/* mobile */
+@media (max-width: 768px) {
+    #propal li {
+        flex: 0 1 calc(50% - 10px); 
+    }
+
+    .overlay-title {
+        font-size: 1rem;
+    }
+    .titres2{
+        font-size: 2rem;
+    }
+    .overlay-title{
+        font-size: 1.5vh ;
+    }
+}
+
+.hidden {display: none;}
+.visible {display: block;}

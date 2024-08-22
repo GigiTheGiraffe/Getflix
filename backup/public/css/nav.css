@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
+.navB {
+    top: 0%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: none;    
+    margin-top: 2vh !important;
+}
+
+.navB .logo {
+    margin-top: 2vh;
+    margin-left: 4vw;
+}
+
+.navB .lien {
+    margin-right: 4vw;
+}
+
+.navB .lien ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    gap: 1vw;
+
+}
+
+.navB .lien ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 300;
+    font-family: 'Inter';
+    padding: 1vw;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.butviolets {
+    font-family: "Inter";
+    font-size: 1rem;
+    font-weight: 400 !important;
+    color: white;
+    background: linear-gradient(to right, blueviolet, rgb(255, 107, 0));
+    padding: 6px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: none;
+}
+.navB form {
+    margin: 0;
+}
+.butvio {
+    font-family: "Inter";
+    font-size: 1rem;
+    font-weight: 400 !important;
+    color: white;
+    background-color: blueviolet;
+    padding: 6px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: none;
+}
+
+@media (max-width: 768px) {
+    .home, .logout {
+        display: none;
+    }
+    
+}@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
+.navB {
+    top: 0%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: none;    
+    margin-top: 2vh !important;
+}
+
+.navB .logo {
+    margin-top: 2vh;
+    margin-left: 4vw;
+}
+
+.navB .lien {
+    margin-right: 4vw;
+}
+
+.navB .lien ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    gap: 1vw;
+
+}
+
+.navB .lien ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 300;
+    font-family: 'Inter';
+    padding: 1vw;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.butviolets {
+    font-family: "Inter";
+    font-size: 1rem;
+    font-weight: 400 !important;
+    color: white;
+    background: linear-gradient(to right, blueviolet, rgb(255, 107, 0));
+    padding: 6px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: none;
+}
+.navB form {
+    margin: 0;
+}
+.butvio {
+    font-family: "Inter";
+    font-size: 1rem;
+    font-weight: 400 !important;
+    color: white;
+    background-color: blueviolet;
+    padding: 6px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: none;
+}
+
+@media (max-width: 768px) {
+    .home, .logout {
+        display: none;
+    }
+    
+}

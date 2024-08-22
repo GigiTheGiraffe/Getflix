@@ -1,0 +1,180 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
+* {
+    background-color: rgb(6, 6, 6);
+}
+
+html {
+    height: auto;
+}
+
+body {
+    margin: 0;
+    top: auto;
+}
+
+main {
+    padding: 4vh 4vw;   
+}
+
+.titres {
+    background: none;
+    font-family: "Newsreader", light;
+    font-weight: 300;
+    font-size: 4rem;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.purple-divider {
+    position: relative;
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to right, blueviolet, rgb(255, 107, 0));
+    border-radius: 5px;
+    margin-top: 2vh;
+    margin-bottom: 3vh;
+}
+
+#blocalaune {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background: linear-gradient(to right, blueviolet, rgb(255, 107, 0));
+}
+
+#infotendance {
+    width: 30vh;
+    height: auto;
+    flex: 1 1 300px; 
+    padding-right: 5vh;
+    margin: 0; 
+    background: none;   
+}
+
+.texteA {
+    background: none;
+    padding-left: 4vh;
+    text-shadow: 1px 1px 1.3px rgba(0, 0, 0, 0.7);
+}
+
+.title {
+    font-family: "Newsreader";
+    font-weight: 700;
+    font-size: 2rem;
+    color: white; 
+    margin-bottom: 4vh;
+}
+
+.genreid {
+    font-family: "Newsreader";
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: white; 
+}
+
+.overview {
+    font-family: "Inter";
+    font-weight: 300;
+    font-size: 1rem;
+    color: white; 
+}
+
+.backdrop {
+    flex: 2 1 600px; 
+    margin: 0; 
+    overflow: hidden; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img.bdp {
+    width: 100%;
+    height: auto; 
+    object-fit: cover;
+    display: block;
+}
+
+/* bloc responsive  */
+
+.blocresume {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.main-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.main-list li {
+    flex: 0 0 calc(50% - 10px); 
+    box-sizing: border-box;
+    margin: 5px;
+    padding: 10px;
+}
+
+.main-list li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.poster {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.text-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.texteB {
+    font-family: "Newsreader";
+    font-weight: 150;
+    font-size: 2rem;
+    color: white; 
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+.left-align {
+    text-align: left;
+}
+
+.right-align {
+    text-align: right;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .titres{
+        font-size: 3rem;
+        text-align: center;
+    }
+    .main-list li {
+        flex: 0 0 100%; 
+    }
+    .texteB{
+        font-size: 1.5rem;
+    }
+}

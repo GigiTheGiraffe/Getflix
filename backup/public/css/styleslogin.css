@@ -1,0 +1,545 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
+* {
+    background-color: rgb(6, 6, 6);
+}
+  
+html {
+    height: auto;
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    margin: 0;
+    top: auto;
+    padding: 0%;
+}
+
+main {
+    padding: 4vh 4vw;
+}
+.navB .lien ul li a {
+    display: none;
+}
+/* login boxes */
+
+#log1 {
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 10px; 
+}
+
+.border {
+    border: solid blueviolet;
+    border-radius: 30px !important;
+    display: flex;
+    justify-content: center;
+    width: 30%;
+}
+
+.titre {
+    font-family: "Newsreader";
+    font-weight: 200;
+    font-size: 2rem;
+    color: white; 
+    margin: 1vh 0 0;
+    text-align: center;
+}
+
+.border .purple-divider {
+    margin-top: 2vh;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: baseline;
+    align-self: baseline;
+    width: 100%; 
+}
+
+form {
+    display: flex;
+    flex-direction: column; 
+    width: 90%;
+    margin-top: 4vh;
+    background-color: transparent !important;
+}
+
+input {
+    width: 90%;
+    margin: 1vh 1vw;
+    padding: 1vh 1vw; 
+    font-size: 1rem;
+    color: blueviolet; 
+    border: 1px solid blueviolet; 
+    border-radius: 10px;   
+}
+
+label {
+    margin: 0%;
+    padding: 0%;
+    text-align: left;
+    background-color: transparent !important;
+    width: 90%;
+}
+
+.texte {
+    font-family: "Inter";
+    font-weight: 200;
+    font-size: 1rem;
+    color: white; 
+    margin: 1vh 0 0;  
+    text-align: left !important;  
+}
+
+.pass {
+    display: flex !important;
+    flex-direction: row-reverse!important;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4vh;    
+}
+
+.butviolet {
+    font-family: "Inter";
+    font-size: 1rem;
+    font-weight: 400 !important;
+    color: white;
+    background: linear-gradient(to right, blueviolet, rgb(255, 107, 0));
+    margin-right: 2vh;
+    padding: 6px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px; 
+    box-shadow: none;   
+}
+
+.texte2 {
+    font-family: "Inter";
+    font-weight: 300;
+    font-size: 0.8rem;
+    color: blueviolet; 
+    text-decoration: none;
+    text-align: left;
+    background-color: transparent;
+    margin-left: 1vw;
+}
+
+.sub {
+    display: flex;
+    justify-content: right !important;
+    width: 100%;
+    background-color: transparent;
+    align-items: end !important;
+    margin-bottom: 4vh;  
+}
+
+.check {
+    width: auto;
+    background-color: transparent;
+    margin-right: 0;
+}
+
+.boxcheck {
+    display: inline-flex !important;
+    flex-direction: row;
+    background-color: transparent;
+}
+
+/* after the login boxes */
+.purple-divider {
+    position: relative;
+    border: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, blueviolet, rgb(255, 107, 0));
+    background-color: blueviolet;
+    border-radius: 5px;
+    margin-top: 6vh;
+    margin-bottom: 3vh;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.titres2 {
+    font-family: "Newsreader";
+    font-weight: 300;
+    font-size: 2.4rem;
+    color: white; 
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    background: none;
+    text-align: center;
+}
+
+#blocresume {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.movie-item2 {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.movie-item2 li {
+    flex: 0 0 calc(20% - 10px); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+    text-decoration: none;
+}
+
+.movie-item2 li a {
+    text-decoration: none;
+}
+
+.poster {
+    width: 100%; 
+    height: auto; 
+    aspect-ratio: 2/2; 
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.titres3 {
+    text-align: center;
+    max-width: 100%;
+    margin-top: 10px;
+    word-wrap: break-word; 
+    flex-grow: 1; 
+    font-family: "Newsreader";
+    font-weight: 200;
+    font-size: 1.5rem;
+    color: white; 
+    background: none;
+    text-align: center; 
+    text-decoration: none !important;
+    background-color: transparent;
+}
+
+@media (max-width: 768px) {
+    .movie-item2 {
+        justify-content: center; 
+    }
+
+    .movie-item2 li {
+        flex: 0 0 85%; 
+        margin: 10px 0;
+    }
+
+    .border {
+        width: 90%; 
+        margin: 10px auto;
+        padding: 15px; 
+    }
+
+    #log1 {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .border {
+        width: 60%; 
+        margin: 10px auto; 
+    }
+
+    form {
+        width: 100%;
+    }
+
+    input {
+        width: 90%; 
+    }
+
+    .pass { 
+        justify-content: flex-start;
+        gap: 2vw;
+    }
+    
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
+* {
+    background-color: rgb(6, 6, 6);
+}
+  
+html {
+    height: auto;
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    margin: 0;
+    top: auto;
+    padding: 0%;
+}
+
+main {
+    padding: 4vh 4vw;
+}
+.navB .lien ul li a {
+    display: none;
+}
+/* login boxes */
+
+#log1 {
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 10px; 
+}
+
+.border {
+    border: solid blueviolet;
+    border-radius: 30px !important;
+    display: flex;
+    justify-content: center;
+    width: 30%;
+}
+
+.titre {
+    font-family: "Newsreader";
+    font-weight: 200;
+    font-size: 2rem;
+    color: white; 
+    margin: 1vh 0 0;
+    text-align: center;
+}
+
+.border .purple-divider {
+    margin-top: 2vh;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: baseline;
+    align-self: baseline;
+    width: 100%; 
+}
+
+form {
+    display: flex;
+    flex-direction: column; 
+    width: 90%;
+    margin-top: 4vh;
+    background-color: transparent !important;
+}
+
+input {
+    width: 90%;
+    margin: 1vh 1vw;
+    padding: 1vh 1vw; 
+    font-size: 1rem;
+    color: blueviolet; 
+    border: 1px solid blueviolet; 
+    border-radius: 10px;   
+}
+
+label {
+    margin: 0%;
+    padding: 0%;
+    text-align: left;
+    background-color: transparent !important;
+    width: 90%;
+}
+
+.texte {
+    font-family: "Inter";
+    font-weight: 200;
+    font-size: 1rem;
+    color: white; 
+    margin: 1vh 0 0;  
+    text-align: left !important;  
+}
+
+.pass {
+    display: flex !important;
+    flex-direction: row-reverse!important;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4vh;    
+}
+
+.butviolet {
+    font-family: "Inter";
+    font-size: 1rem;
+    font-weight: 400 !important;
+    color: white;
+    background: linear-gradient(to right, blueviolet, rgb(255, 107, 0));
+    margin-right: 2vh;
+    padding: 6px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px; 
+    box-shadow: none;   
+}
+
+.texte2 {
+    font-family: "Inter";
+    font-weight: 300;
+    font-size: 0.8rem;
+    color: blueviolet; 
+    text-decoration: none;
+    text-align: left;
+    background-color: transparent;
+    margin-left: 1vw;
+}
+
+.sub {
+    display: flex;
+    justify-content: right !important;
+    width: 100%;
+    background-color: transparent;
+    align-items: end !important;
+    margin-bottom: 4vh;  
+}
+
+.check {
+    width: auto;
+    background-color: transparent;
+    margin-right: 0;
+}
+
+.boxcheck {
+    display: inline-flex !important;
+    flex-direction: row;
+    background-color: transparent;
+}
+
+/* after the login boxes */
+.purple-divider {
+    position: relative;
+    border: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, blueviolet, rgb(255, 107, 0));
+    background-color: blueviolet;
+    border-radius: 5px;
+    margin-top: 6vh;
+    margin-bottom: 3vh;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.titres2 {
+    font-family: "Newsreader";
+    font-weight: 300;
+    font-size: 2.4rem;
+    color: white; 
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    background: none;
+    text-align: center;
+}
+
+#blocresume {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.movie-item2 {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.movie-item2 li {
+    flex: 0 0 calc(20% - 10px); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+    text-decoration: none;
+}
+
+.movie-item2 li a {
+    text-decoration: none;
+}
+
+.poster {
+    width: 100%; 
+    height: auto; 
+    aspect-ratio: 2/2; 
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.titres3 {
+    text-align: center;
+    max-width: 100%;
+    margin-top: 10px;
+    word-wrap: break-word; 
+    flex-grow: 1; 
+    font-family: "Newsreader";
+    font-weight: 200;
+    font-size: 1.5rem;
+    color: white; 
+    background: none;
+    text-align: center; 
+    text-decoration: none !important;
+    background-color: transparent;
+}
+
+@media (max-width: 768px) {
+    .movie-item2 {
+        justify-content: center; 
+    }
+
+    .movie-item2 li {
+        flex: 0 0 85%; 
+        margin: 10px 0;
+    }
+
+    .border {
+        width: 90%; 
+        margin: 10px auto;
+        padding: 15px; 
+    }
+
+    #log1 {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .border {
+        width: 60%; 
+        margin: 10px auto; 
+    }
+
+    form {
+        width: 100%;
+    }
+
+    input {
+        width: 90%; 
+    }
+
+    .pass { 
+        justify-content: flex-start;
+        gap: 2vw;
+    }
+    
+}

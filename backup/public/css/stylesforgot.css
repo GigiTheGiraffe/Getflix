@@ -1,0 +1,208 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
+* {
+    background-color: rgb(6, 6, 6);
+}
+
+html {
+    height: auto;
+    margin: 0%;
+    padding: 0%;
+}
+body {
+    margin: 0;
+    top: auto;
+    padding: 0%;      
+}
+
+main {
+    padding-left: 4vw;
+    padding-right: 4vw;
+}
+
+.navbar  {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    align-items: center;
+}
+
+
+.navbar a {
+    background: none;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+}
+
+.navbar li:first-child {
+    margin-right: auto; /* Pousse les autres éléments vers la droite */
+    
+}
+
+.butprofil {
+    font-family: "Inter";
+    font-size: 1rem;
+    font-weight: 500 !important;
+    color: white;
+    background-color: blueviolet;
+    margin-right: 1vw;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px; 
+    box-shadow: none;  
+}
+.but {
+    font-family: "Inter";
+    font-size: 1rem;
+    font-weight: 500 !important;
+    color: white;
+    margin-right: 1vw;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 20px; 
+    box-shadow: none;   
+
+}
+
+.butdeco {
+    color: blueviolet;
+    font-family: "Inter";
+    color: white;
+    font-size: 1rem;
+    font-weight: 800 !important;
+    background-color: rgb(255, 107, 0);
+    margin-right: 4vw;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px; 
+    box-shadow: none; 
+}
+
+.butblanc {
+    color: blueviolet;
+    font-family: "Inter";
+    color: white;
+    font-size: 1rem;
+    font-weight: 800 !important;
+    background-color: rgb(255, 107, 0);
+    padding: 6px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px; 
+    box-shadow: none; 
+}
+
+/* forgot password  */
+
+#log1 {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-radius: 10px;
+    height: auto;
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+
+.border {
+    border: solid blueviolet;
+    border-radius: 30px !important;
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    height: ;
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Aligner les éléments en colonne */
+    margin-right: 3vw;
+    margin-left: 3vw;
+    margin-top: 2vh;
+    margin-bottom: 4vh;
+    align-items: center;
+    box-sizing: border-box;
+    
+}
+
+.titres {
+    font-family: "Newsreader";
+    font-weight: 200;
+    font-size: 2rem;
+    color: white; 
+    margin: 1vh 0 0;
+    text-align: center;
+}
+
+.border .purple-divider {
+    margin-top: 2vh;
+}
+
+.texte {
+    font-family: "Inter";
+    font-weight: 200;
+    font-size: 1rem;
+    color: white; 
+    margin: 1vh 0 0;  
+    text-align: left !important;  
+}
+
+input {
+    width: 90%;
+    margin: 1vh 1vw;
+    padding: 1vh 1vw; 
+    font-size: 1rem;
+    color: blueviolet; /* Ajuster la taille de la police */
+    border: 1px solid blueviolet; /* Ajouter une bordure */
+    border-radius: 10px;   
+    margin-bottom: 6vh;
+}
+
+.butviolet {
+    font-family: "Inter";
+    font-size: 1rem;
+    font-weight: 400 !important;
+    color: white;
+    background: linear-gradient(to right, blueviolet, rgb(255, 107, 0));
+    padding: 6px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px; 
+    box-shadow: none;   
+}
+
+.purple-divider {
+    position: relative;
+    border: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, blueviolet, rgb(255, 107, 0));
+    background-color: blueviolet;
+    border-radius: 5px;
+    margin-bottom: 3vh;
+}
+
+h2 {
+    margin-top: 20%;
+    font-family: "Newsreader";
+    font-weight: 200;
+    font-size: 2rem;
+    color: white; 
+    margin: 1vh 0 0;
+    text-align: center;
+}
+
+p {
+    font-family: 'Inter' !important;
+    font-weight: 200;
+    font-size: 1rem;
+    color: white; 
+    margin: 1vh 0 0;  
+    text-align: center !important;   
+}
