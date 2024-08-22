@@ -11,9 +11,38 @@ $firstMovie = $data['results'][0];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="tendanceStyle.css">
+    <link href="nav.css" rel="stylesheet">
     <title>Tendances</title>
 </head>
 <body>
+<navbar>
+    <section class="navB">
+        <article class="logo">
+            <img src="logo.png" alt="logo Flouflix" width="60px">
+        </article>
+        <article class="lien">
+            <ul>
+                <li>
+                    <a  class="home" href="../../index.php">Home</a>
+                </li>
+                <li>
+                    <a class="trend" href="tendance.php">Trending</a>
+                </li>
+                <li>
+                    <a class="movies" href="movies.php">Movies</a>
+                </li>                
+                <li>
+                    <button href="profile.php" class="butvio profil" name="logout">My Profil</button>
+                </li>
+                <li>
+                    <form method="POST" action="../scripts/logout.php" name="logout">
+                        <button class="butviolets logout" name="logout">Logout</button>
+                    </form>
+                </li>
+            </ul>
+        </article>
+    </section>
+</navbar>
     <main>
         <section class="movie1">
             <article>

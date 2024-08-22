@@ -22,7 +22,9 @@ body {
 main {
     padding: 4vh 4vw;
 }
-
+.navB .lien ul li a {
+    display: none;
+}
 /* login boxes */
 
 #log1 {
@@ -75,8 +77,8 @@ input {
     margin: 1vh 1vw;
     padding: 1vh 1vw; 
     font-size: 1rem;
-    color: blueviolet; /* Ajuster la taille de la police */
-    border: 1px solid blueviolet; /* Ajouter une bordure */
+    color: blueviolet; 
+    border: 1px solid blueviolet; 
     border-radius: 10px;   
 }
 

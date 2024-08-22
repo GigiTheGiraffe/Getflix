@@ -9,10 +9,38 @@ include("user_session_check.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesmovies.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@8.4.0/themes/reset-min.css" integrity="sha256-D+cGTF0LVHjuEf+CDRkHeNw/KTHPg47t1AA/qmzxgtA=" crossorigin="anonymous">
+    <link href="nav.css" rel="stylesheet">
     <title>Movies</title>
 </head>
-
 <body>
+<navbar>
+    <section class="navB">
+        <article class="logo">
+            <img src="logo.png" alt="logo Flouflix" width="60px">
+        </article>
+        <article class="lien">
+            <ul>
+                <li>
+                    <a  class="home" href="../../index.php">Home</a>
+                </li>
+                <li>
+                    <a class="trend" href="tendance.php">Trending</a>
+                </li>
+                <li>
+                    <a class="movies" href="movies.php">Movies</a>
+                </li>                
+                <li>
+                    <button href="profile.php" class="butvio profil" name="logout">My Profil</button>
+                </li>
+                <li>
+                    <form method="POST" action="../scripts/logout.php" name="logout">
+                        <button class="butviolets logout" name="logout">Logout</button>
+                    </form>
+                </li>
+            </ul>
+        </article>
+    </section>
+</navbar>
     <main>
         <section id="movie1">
             <article id="infos">

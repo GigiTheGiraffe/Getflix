@@ -11,18 +11,38 @@ echo "Bienvenue, " . $_SESSION['user_name'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styleslogin.css">
+    <link href="nav.css" rel="stylesheet">
     <title>Tendances</title>
 </head>
 <body>
-<header>
-    <ul class="navbar">
-        <!-- <li><a href="default.asp"><img href="login.html"></a></li>
-        <li><a href="login.html">Movies</a></li>
-        <li><a href="login.html">Trend</a></li>
-        <li class="butprofil"><a href="">My Profil</a></li>
-        <li class="butblanc"><a href="">Déconnexion</a></li>           -->
-      </ul>    
-</header>    
+<navbar>
+        <section class="navB">
+            <article class="logo">
+                <img src="logo.png" alt="logo Flouflix" width="60px">
+            </article>
+            <article class="lien">
+                <ul>
+                    <li>
+                        <a  class="home" href="../../index.php">Home</a>
+                    </li>
+                    <li>
+                        <a class="trend" href="tendance.php">Trending</a>
+                    </li>
+                    <li>
+                        <a class="movies" href="movies.php">Movies</a>
+                    </li>                
+                    <li>
+                        <button href="profile.php" class="butvio profil" name="logout">My Profil</button>
+                    </li>
+                    <li>
+                        <form method="POST" action="../scripts/logout.php" name="logout">
+                            <button class="butviolets logout" name="logout">Logout</button>
+                        </form>
+                    </li>
+                </ul>
+            </article>
+        </section>
+    </navbar>    
     <main>
     <section id="log1">
             <article class="border">

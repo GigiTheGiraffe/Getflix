@@ -21,9 +21,9 @@ body {
   
 .goback {
     position: fixed; 
-    top: 10px; 
+    top: 17vh; 
     left: 10px; 
-    z-index: 1000; 
+    z-index: 10000; 
     background-color: transparent; 
     padding: 5px 10px; 
     text-decoration: none; 
@@ -124,7 +124,7 @@ body {
     font-size: 1rem;
     font-weight: 500 !important;
     color: white;
-    background-color: blueviolet;
+    background-color: blueviolet !important;
     padding: 6px 20px;
     border: none; 
     appearance: none;
